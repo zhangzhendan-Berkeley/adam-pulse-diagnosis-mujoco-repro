@@ -1,0 +1,7 @@
+extends: alignment_pro_custom_right_hand_multifinger_v1.yaml
+
+task:
+  # Frozen after same-seed A/B: positive patient-axis moves need a smaller
+  # bound near the visible wrist transition. Lateral and negative-axis moves
+  # retain the established 4 mm bound.
+  pulse_search_positive_axial_maximum_step_m: 0.003

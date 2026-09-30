@@ -1,0 +1,9 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_force10.yaml
+
+# Meeting-only expert-speed ablation. Preserve contact and force limits while
+# using a faster preload ramp and shorter confirmation window.
+task:
+  pressure_force_ramp_n_per_policy_step: 0.16
+  pressure_force_unload_n_per_policy_step: 0.60
+  pressure_stable_iterations: 8
+  pressure_maximum_iterations: 140

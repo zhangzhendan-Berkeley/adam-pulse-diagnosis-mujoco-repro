@@ -1,0 +1,536 @@
+{
+  "schema_version": "handle_l1_custom_right_semantic_match_v1",
+  "new_manifest": "cad_solids/extract_manifest.json",
+  "new_source_sha256": "b2f638e4807d96d1ff36e795b5d3ac24d27018cb0377791561a09e133b69c57b",
+  "legacy_usd": "Handle_L1_right.usd (source archive, not required at runtime)",
+  "legacy_usd_sha256": "d5964cbf38f25d0012f2807c24e6d33ed07f2331bea4648be98540d8592ce9f1",
+  "method": "Hungarian shape matching followed by reflected centroid refinement",
+  "legacy_to_new_row_vector_rotation": [
+    [
+      0.9999989005047085,
+      -0.0010954074239269349,
+      0.0009995358671778596
+    ],
+    [
+      -0.0010975534816393899,
+      -0.9999970885024814,
+      0.0021490376721774464
+    ],
+    [
+      -0.000997178885211282,
+      0.002150132353392338,
+      0.9999971912786227
+    ]
+  ],
+  "legacy_to_new_translation_mm": [
+    -0.09953108555295698,
+    -81.52923891745297,
+    -0.5898877485140446
+  ],
+  "transform_determinant": -1.0000000000000007,
+  "centroid_rms_residual_mm": 1.429988553798661,
+  "maximum_centroid_residual_mm": 3.034858549972311,
+  "requires_manual_review": true,
+  "matches": [
+    {
+      "solid_index": 0,
+      "solid_file": "solid_00.stl",
+      "legacy_part": "tn__STEP1_19_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_middle_distal",
+      "shape_cost": 0.06912451837473571,
+      "refined_cost": 0.1264272744732546,
+      "centroid_residual_mm": 1.3992539316275208,
+      "volume_ratio_new_over_legacy": 1.001198103614027,
+      "new_center_mm": [
+        -4.431190408246835,
+        -31.16829689670587,
+        -17.099924514590715
+      ],
+      "legacy_center_mm": [
+        -3.9878682996713395,
+        -50.38045992142149,
+        -15.06127941606255
+      ]
+    },
+    {
+      "solid_index": 1,
+      "solid_file": "solid_01.stl",
+      "legacy_part": "tn__STEP1_17_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_little_distal",
+      "shape_cost": 0.06146672554056056,
+      "refined_cost": 0.11515902829177982,
+      "centroid_residual_mm": 1.4990692446919034,
+      "volume_ratio_new_over_legacy": 1.0008462090474777,
+      "new_center_mm": [
+        -4.179431567416539,
+        -76.6164685753468,
+        -31.441574239008805
+      ],
+      "legacy_center_mm": [
+        -3.735739821665677,
+        -4.7188916301197,
+        -29.409681711501847
+      ]
+    },
+    {
+      "solid_index": 2,
+      "solid_file": "solid_02.stl",
+      "legacy_part": "tn__STEP1_11_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_ring_distal",
+      "shape_cost": 0.06911914587438658,
+      "refined_cost": 0.12452536233581638,
+      "centroid_residual_mm": 1.447323733077392,
+      "volume_ratio_new_over_legacy": 1.0011546683780752,
+      "new_center_mm": [
+        -4.179242484252255,
+        -54.263510770165276,
+        -23.248351862324764
+      ],
+      "legacy_center_mm": [
+        -3.735771745869749,
+        -27.178332062811045,
+        -21.209968435401482
+      ]
+    },
+    {
+      "solid_index": 3,
+      "solid_file": "solid_03.stl",
+      "legacy_part": "tn__STEP1_4_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_index_distal",
+      "shape_cost": 0.061776306288143866,
+      "refined_cost": 0.12096384752807796,
+      "centroid_residual_mm": 1.3581035248806632,
+      "volume_ratio_new_over_legacy": 1.000905892954554,
+      "new_center_mm": [
+        -4.179244418966276,
+        -8.347863025576617,
+        -23.452131766346604
+      ],
+      "legacy_center_mm": [
+        -3.7356606664325334,
+        -73.30695796262667,
+        -21.42091986364017
+      ]
+    },
+    {
+      "solid_index": 4,
+      "solid_file": "solid_04.stl",
+      "legacy_part": "tn__STEP1_15_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_middle_proximal",
+      "shape_cost": 0.053551310019466815,
+      "refined_cost": 0.09882470185393749,
+      "centroid_residual_mm": 1.134641296284056,
+      "volume_ratio_new_over_legacy": 1.0000149544568357,
+      "new_center_mm": [
+        -3.9574226974146396,
+        -32.386350725379565,
+        -60.42692469400718
+      ],
+      "legacy_center_mm": [
+        -3.7370050309402147,
+        -49.23029763658232,
+        -58.61782890487826
+      ]
+    },
+    {
+      "solid_index": 5,
+      "solid_file": "solid_05.stl",
+      "legacy_part": "tn__STEP1_10_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_ring_proximal",
+      "shape_cost": 0.05318897682040995,
+      "refined_cost": 0.1007090803296464,
+      "centroid_residual_mm": 1.2793655044981593,
+      "volume_ratio_new_over_legacy": 1.0044831824546694,
+      "new_center_mm": [
+        -3.546271039522669,
+        -53.17004239889485,
+        -64.07820765943885
+      ],
+      "legacy_center_mm": [
+        -3.475000371082959,
+        -28.28300665401331,
+        -62.16325096541574
+      ]
+    },
+    {
+      "solid_index": 6,
+      "solid_file": "solid_06.stl",
+      "legacy_part": "tn__STEP1_20_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_index_proximal",
+      "shape_cost": 0.04684952629482855,
+      "refined_cost": 0.09719175912805372,
+      "centroid_residual_mm": 1.1707216663032896,
+      "volume_ratio_new_over_legacy": 1.004505346462847,
+      "new_center_mm": [
+        -3.545847930267408,
+        -11.528572718392788,
+        -64.17289014965026
+      ],
+      "legacy_center_mm": [
+        -3.4750531119424695,
+        -70.12520949945608,
+        -62.26350414170238
+      ]
+    },
+    {
+      "solid_index": 7,
+      "solid_file": "solid_07.stl",
+      "legacy_part": "tn__STEP1_3_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_little_proximal",
+      "shape_cost": 0.03462360421316897,
+      "refined_cost": 0.0752615546830107,
+      "centroid_residual_mm": 1.187387510884543,
+      "volume_ratio_new_over_legacy": 1.000837175840452,
+      "new_center_mm": [
+        -3.2334877652966534,
+        -73.69964082799272,
+        -69.41776044916772
+      ],
+      "legacy_center_mm": [
+        -3.2749650053175445,
+        -7.715108180346968,
+        -67.65065924876045
+      ]
+    },
+    {
+      "solid_index": 8,
+      "solid_file": "solid_08.stl",
+      "legacy_part": "tn__STEP1_14_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_base",
+      "shape_cost": 0.011442514625103787,
+      "refined_cost": 0.12761804632900964,
+      "centroid_residual_mm": 3.034858549972311,
+      "volume_ratio_new_over_legacy": 0.999826691099932,
+      "new_center_mm": [
+        0.2895842520666262,
+        -36.82984465895563,
+        -132.105525106298
+      ],
+      "legacy_center_mm": [
+        0.19912667562149175,
+        -43.65773655502219,
+        -128.68902537149685
+      ]
+    },
+    {
+      "solid_index": 9,
+      "solid_file": "solid_09.stl",
+      "legacy_part": "tn__STEP1_23_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_base",
+      "shape_cost": 0.06386500540001808,
+      "refined_cost": 0.08532466243722592,
+      "centroid_residual_mm": 0.6991116125885675,
+      "volume_ratio_new_over_legacy": 0.9980646902236666,
+      "new_center_mm": [
+        -15.211811354008907,
+        -40.67704530699403,
+        -125.6640894905972
+      ],
+      "legacy_center_mm": [
+        -14.751370498327836,
+        -40.68554314298801,
+        -125.1493238531946
+      ]
+    },
+    {
+      "solid_index": 10,
+      "solid_file": "solid_10.stl",
+      "legacy_part": "tn__STEP1_18_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_middle_distal",
+      "shape_cost": 0.22337390732480963,
+      "refined_cost": 0.29555441984046593,
+      "centroid_residual_mm": 1.7830895294620357,
+      "volume_ratio_new_over_legacy": 1.0014169988531765,
+      "new_center_mm": [
+        2.2000294239986107,
+        -30.920770172645764,
+        -6.891268300994872
+      ],
+      "legacy_center_mm": [
+        1.6796432731763482,
+        -50.562719378444655,
+        -7.887188843549197
+      ]
+    },
+    {
+      "solid_index": 11,
+      "solid_file": "solid_11.stl",
+      "legacy_part": "tn__STEP1_x7f2NnmX5mtb0cvBzyx2zkS",
+      "semantic_link": "handle_l1_little_distal",
+      "shape_cost": 0.21757196332369033,
+      "refined_cost": 0.2942186520005823,
+      "centroid_residual_mm": 1.6963733021231504,
+      "volume_ratio_new_over_legacy": 1.0014221647467516,
+      "new_center_mm": [
+        2.452120586865274,
+        -77.43720484286465,
+        -21.263616526244604
+      ],
+      "legacy_center_mm": [
+        1.9318676263494536,
+        -4.150636563542552,
+        -22.25611507662557
+      ]
+    },
+    {
+      "solid_index": 12,
+      "solid_file": "solid_12.stl",
+      "legacy_part": "tn__STEP1_13_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_ring_distal",
+      "shape_cost": 0.22381203816774856,
+      "refined_cost": 0.2982542413825702,
+      "centroid_residual_mm": 1.7399850475494287,
+      "volume_ratio_new_over_legacy": 1.0014194246823092,
+      "new_center_mm": [
+        2.452126225432264,
+        -54.550750345122495,
+        -13.040921323546286
+      ],
+      "legacy_center_mm": [
+        1.9317859712967194,
+        -26.985001686649667,
+        -14.036598137131048
+      ]
+    },
+    {
+      "solid_index": 13,
+      "solid_file": "solid_13.stl",
+      "legacy_part": "tn__STEP1_5_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_index_distal",
+      "shape_cost": 0.21665194381365083,
+      "refined_cost": 0.286447106931457,
+      "centroid_residual_mm": 1.8227786058393796,
+      "volume_ratio_new_over_legacy": 1.0014201163552419,
+      "new_center_mm": [
+        2.4521322257159284,
+        -7.566581228192778,
+        -13.27051046248123
+      ],
+      "legacy_center_mm": [
+        1.9318179589468787,
+        -73.86480977993676,
+        -14.264615275224171
+      ]
+    },
+    {
+      "solid_index": 14,
+      "solid_file": "solid_14.stl",
+      "legacy_part": "tn__STEP1_21_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_middle_proximal",
+      "shape_cost": 0.32683375866294684,
+      "refined_cost": 0.3533733565635424,
+      "centroid_residual_mm": 0.6352578121310821,
+      "volume_ratio_new_over_legacy": 1.0079063229423746,
+      "new_center_mm": [
+        3.3962368009220385,
+        -32.22378520418794,
+        -56.766816222539596
+      ],
+      "legacy_center_mm": [
+        3.181896780071503,
+        -49.27859197233552,
+        -56.65662635431532
+      ]
+    },
+    {
+      "solid_index": 15,
+      "solid_file": "solid_15.stl",
+      "legacy_part": "tn__STEP1_7_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_little_proximal",
+      "shape_cost": 0.37699064949899663,
+      "refined_cost": 0.4085307771654211,
+      "centroid_residual_mm": 0.5831017906063598,
+      "volume_ratio_new_over_legacy": 1.0215105771266428,
+      "new_center_mm": [
+        3.198452616214912,
+        -73.92123177368161,
+        -66.42129386705199
+      ],
+      "legacy_center_mm": [
+        2.9695714754414384,
+        -7.6055890624571045,
+        -66.32173805753055
+      ]
+    },
+    {
+      "solid_index": 16,
+      "solid_file": "solid_16.stl",
+      "legacy_part": "tn__STEP1_1_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_ring_proximal",
+      "shape_cost": 0.26116456300670904,
+      "refined_cost": 0.2908243729597167,
+      "centroid_residual_mm": 0.6239313362523866,
+      "volume_ratio_new_over_legacy": 1.004815624376272,
+      "new_center_mm": [
+        3.4322923194280337,
+        -53.248990731213446,
+        -60.67403180458655
+      ],
+      "legacy_center_mm": [
+        3.2267471260924605,
+        -28.26266042773702,
+        -60.59310630912806
+      ]
+    },
+    {
+      "solid_index": 17,
+      "solid_file": "solid_17.stl",
+      "legacy_part": "tn__STEP1_22_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_index_proximal",
+      "shape_cost": 0.2572222750714658,
+      "refined_cost": 0.28221341381691945,
+      "centroid_residual_mm": 0.6947671689452805,
+      "volume_ratio_new_over_legacy": 1.0048196611375417,
+      "new_center_mm": [
+        3.432334908812768,
+        -11.251025132186756,
+        -60.77886799754182
+      ],
+      "legacy_center_mm": [
+        3.22689022011532,
+        -70.26933463399037,
+        -60.700315845986914
+      ]
+    },
+    {
+      "solid_index": 18,
+      "solid_file": "solid_18.stl",
+      "legacy_part": "tn__STEP1_2_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_base",
+      "shape_cost": 0.04201668248736671,
+      "refined_cost": 0.08464543650055553,
+      "centroid_residual_mm": 1.010149091740547,
+      "volume_ratio_new_over_legacy": 1.0032933430618844,
+      "new_center_mm": [
+        13.831430835448804,
+        -40.78400014588676,
+        -132.49515837042898
+      ],
+      "legacy_center_mm": [
+        13.623824282910252,
+        -40.87379780640939,
+        -132.8183037487282
+      ]
+    },
+    {
+      "solid_index": 19,
+      "solid_file": "solid_19.stl",
+      "legacy_part": "tn__STEP1_9_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_thumb_distal",
+      "shape_cost": 0.12347721094920909,
+      "refined_cost": 0.16132272423104957,
+      "centroid_residual_mm": 1.2501296747414579,
+      "volume_ratio_new_over_legacy": 1.0046812238270917,
+      "new_center_mm": [
+        16.432063086419706,
+        54.46258727825964,
+        -116.4426473174214
+      ],
+      "legacy_center_mm": [
+        16.426538007518527,
+        -136.28057986892847,
+        -116.8162065154079
+      ]
+    },
+    {
+      "solid_index": 20,
+      "solid_file": "solid_20.stl",
+      "legacy_part": "tn__STEP1_6_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_thumb_proximal",
+      "shape_cost": 0.1535417566928089,
+      "refined_cost": 0.18674420727340255,
+      "centroid_residual_mm": 1.0597183831729828,
+      "volume_ratio_new_over_legacy": 0.9942623089069516,
+      "new_center_mm": [
+        16.475479535937158,
+        13.65992989517529,
+        -130.309392166821
+      ],
+      "legacy_center_mm": [
+        16.41531375114923,
+        -95.09825731321499,
+        -130.5144913709352
+      ]
+    },
+    {
+      "solid_index": 21,
+      "solid_file": "solid_21.stl",
+      "legacy_part": "tn__STEP1_16_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_thumb_mount",
+      "shape_cost": 0.02222053492198001,
+      "refined_cost": 0.128499241484451,
+      "centroid_residual_mm": 2.3698192859254634,
+      "volume_ratio_new_over_legacy": 1.00038104676666,
+      "new_center_mm": [
+        16.407056069470002,
+        -18.036698440521118,
+        -144.57301857869925
+      ],
+      "legacy_center_mm": [
+        16.407926259710333,
+        -66.16195826768698,
+        -143.51972443046876
+      ]
+    },
+    {
+      "solid_index": 22,
+      "solid_file": "solid_22.stl",
+      "legacy_part": "tn__STEP1_12_gCq3TtsY7oin0YgFbrx3ffZ0",
+      "semantic_link": "handle_l1_thumb_distal",
+      "shape_cost": 0.06397939028029423,
+      "refined_cost": 0.1462136393887134,
+      "centroid_residual_mm": 1.7733636420760752,
+      "volume_ratio_new_over_legacy": 1.0090218305059566,
+      "new_center_mm": [
+        16.421681613435315,
+        46.52490198250908,
+        -126.83388767446633
+      ],
+      "legacy_center_mm": [
+        16.42044164071892,
+        -130.0892472495176,
+        -125.72269098104141
+      ]
+    },
+    {
+      "solid_index": 23,
+      "solid_file": "solid_23.stl",
+      "legacy_part": "tn__STEP1_8_wAc3Rrqi6dmj0uaEjjn3wWX0",
+      "semantic_link": "handle_l1_thumb_proximal",
+      "shape_cost": 0.11063793660087648,
+      "refined_cost": 0.13043120794340005,
+      "centroid_residual_mm": 0.30943639896607156,
+      "volume_ratio_new_over_legacy": 1.0315409948964767,
+      "new_center_mm": [
+        16.393162946757457,
+        10.179416623635754,
+        -139.75717177414296
+      ],
+      "legacy_center_mm": [
+        16.405564575422297,
+        -92.22564414386773,
+        -139.1663719287769
+      ]
+    },
+    {
+      "solid_index": 24,
+      "solid_file": "solid_24.stl",
+      "legacy_part": "tn__3_efj0kmd0",
+      "semantic_link": "handle_l1_base",
+      "shape_cost": 0.09496732852346751,
+      "refined_cost": 0.134921318721214,
+      "centroid_residual_mm": 0.993995849117039,
+      "volume_ratio_new_over_legacy": 0.9814701535006842,
+      "new_center_mm": [
+        17.517113442570896,
+        -43.23658233911738,
+        -130.4707359694979
+      ],
+      "legacy_center_mm": [
+        17.496158769027414,
+        -38.20365752227993,
+        -130.72969776677425
+      ]
+    }
+  ]
+}

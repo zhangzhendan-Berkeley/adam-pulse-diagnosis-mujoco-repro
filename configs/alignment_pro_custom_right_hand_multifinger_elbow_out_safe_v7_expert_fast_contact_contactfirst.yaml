@@ -1,0 +1,5 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_expert_fast_contact_softforce.yaml
+task:
+  pressure_stable_without_full_command: true
+  pressure_stable_iterations: 4
+  pressure_minimum_force_n_per_finger: 1.25

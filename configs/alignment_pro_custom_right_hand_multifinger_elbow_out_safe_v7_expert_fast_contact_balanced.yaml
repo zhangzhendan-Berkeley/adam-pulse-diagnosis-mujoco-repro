@@ -1,0 +1,9 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_expert_fast_contact_recovery45.yaml
+task:
+  pressure_force_ramp_n_per_policy_step: 0.10
+  contact_multifinger_balance_tilt_enabled: true
+  search_multifinger_balance_tilt_enabled: true
+  dual_contact_balance_tilt_enabled: true
+  pressure_contact_loss_no_contact_descent_step_m: 0.00045
+  pressure_contact_loss_recovery_descent_step_m: 0.00030
+  pressure_contact_loss_recovery_iterations: 40

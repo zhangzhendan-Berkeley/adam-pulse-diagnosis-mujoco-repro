@@ -1,0 +1,14 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v6_step3_candidate.yaml
+
+# CH5 force-range candidate. The physical tactile calibration is 0--10 N.
+# Keep the nominal palpation target and soft relief unchanged; only the
+# bounded recovery/sampling and data-quality ceiling are widened to the
+# sensor's rated range. The 6.8 N soft guard remains the normal relief path.
+task:
+  pressure_maximum_force_n_per_finger: 10.0
+  pressure_xy_hold_maximum_force_n: 10.0
+  pulse_search_coarse_dual_contact_recovery_force_limit_n: 10.0
+  pulse_search_dual_contact_recovery_force_limit_n: 10.0
+  pulse_search_maximum_sampling_force_n: 10.0
+  pulse_signal_quality:
+    maximum_force_n: 10.0

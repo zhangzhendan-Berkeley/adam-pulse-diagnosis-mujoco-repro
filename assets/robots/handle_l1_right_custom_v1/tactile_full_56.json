@@ -1,0 +1,1590 @@
+{
+  "schema_version": "handle_l1_right_custom_tactile_full_56_v1",
+  "handedness": "right",
+  "finger_order": [
+    "thumb",
+    "index",
+    "middle",
+    "ring",
+    "little"
+  ],
+  "total_channel_count": 56,
+  "diagnostic_view": {
+    "finger_order": [
+      "index",
+      "middle"
+    ],
+    "shape": [
+      2,
+      10
+    ],
+    "global_channel_ids": [
+      [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    ]
+  },
+  "coordinate_convention": {
+    "tactile_minus_x": "outward pad normal",
+    "tactile_plus_y": "supplier lateral coordinate after centering",
+    "tactile_plus_z": "supplier 0..25 mm longitudinal coordinate after centering",
+    "source": "incoming/触觉传感信息.txt via tactile_layouts.py"
+  },
+  "calibration": {
+    "ten_channel_artifact": "assets/calibration/handle_l1_10ch_empirical_10n.npz",
+    "adc_range": [
+      0,
+      4095
+    ],
+    "unloaded_nominal": 3900,
+    "pressure_direction": "raw ADC decreases as pressure increases",
+    "force_range_n": [
+      0.0,
+      10.0
+    ],
+    "thumb_16_channel_status": "same material response; per-channel hardware calibration pending"
+  },
+  "fingers": {
+    "thumb": {
+      "global_channel_offset": 0,
+      "channel_count": 16,
+      "parent_link": "handle_l1_thumb_distal",
+      "site_name": "handle_l1_thumb_tactile_site",
+      "contact_geom_name": "handle_l1_thumb_tactile_pad",
+      "position_in_parent_m": [
+        0.00915220791320801,
+        0.03304264005126953,
+        0.01676322512207031
+      ],
+      "rotation_parent_from_tactile": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "basis": {
+        "u_lateral_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "v_longitudinal_in_parent": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "n_outward_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ]
+      }
+    },
+    "index": {
+      "global_channel_offset": 16,
+      "channel_count": 10,
+      "parent_link": "handle_l1_index_distal",
+      "site_name": "handle_l1_index_tactile_site",
+      "contact_geom_name": "handle_l1_index_tactile_pad",
+      "position_in_parent_m": [
+        0.007116264881896973,
+        0.002831324966430664,
+        0.03618100980834961
+      ],
+      "rotation_parent_from_tactile": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "basis": {
+        "u_lateral_in_parent": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "v_longitudinal_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "n_outward_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ]
+      }
+    },
+    "middle": {
+      "global_channel_offset": 26,
+      "channel_count": 10,
+      "parent_link": "handle_l1_middle_distal",
+      "site_name": "handle_l1_middle_tactile_site",
+      "contact_geom_name": "handle_l1_middle_tactile_pad",
+      "position_in_parent_m": [
+        0.007116268228912354,
+        0.0010705893707275394,
+        0.036264992565917975
+      ],
+      "rotation_parent_from_tactile": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "basis": {
+        "u_lateral_in_parent": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "v_longitudinal_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "n_outward_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ]
+      }
+    },
+    "ring": {
+      "global_channel_offset": 36,
+      "channel_count": 10,
+      "parent_link": "handle_l1_ring_distal",
+      "site_name": "handle_l1_ring_tactile_site",
+      "contact_geom_name": "handle_l1_ring_tactile_pad",
+      "position_in_parent_m": [
+        0.007116264881896973,
+        -0.001126791900634764,
+        0.03626095085296631
+      ],
+      "rotation_parent_from_tactile": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "basis": {
+        "u_lateral_in_parent": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "v_longitudinal_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "n_outward_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ]
+      }
+    },
+    "little": {
+      "global_channel_offset": 46,
+      "channel_count": 10,
+      "parent_link": "handle_l1_little_distal",
+      "site_name": "handle_l1_little_tactile_site",
+      "contact_geom_name": "handle_l1_little_tactile_pad",
+      "position_in_parent_m": [
+        0.007116264881896973,
+        -0.0028611577148437563,
+        0.03618222419261932
+      ],
+      "rotation_parent_from_tactile": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "basis": {
+        "u_lateral_in_parent": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "v_longitudinal_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "n_outward_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ]
+      }
+    }
+  },
+  "channels": [
+    {
+      "global_channel_id": 0,
+      "finger_name": "thumb",
+      "finger_channel_id": 0,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.020542639865005013,
+        0.014763225027075406
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 1,
+      "finger_name": "thumb",
+      "finger_channel_id": 1,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.020542639865005013,
+        0.01876322521706521
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        6.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 2,
+      "finger_name": "thumb",
+      "finger_channel_id": 2,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.004000000189989805,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.025542640218907592,
+        0.012763224932080503
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 3,
+      "finger_name": "thumb",
+      "finger_channel_id": 3,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.025542640218907592,
+        0.01676322512207031
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        4.0
+      ],
+      "edge_taxel": false,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 4,
+      "finger_name": "thumb",
+      "finger_channel_id": 4,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.004000000189989805,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.025542640218907592,
+        0.020763225312060114
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        8.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 5,
+      "finger_name": "thumb",
+      "finger_channel_id": 5,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.004000000189989805,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.030542640107148883,
+        0.012763224932080503
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 6,
+      "finger_name": "thumb",
+      "finger_channel_id": 6,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.030542640107148883,
+        0.01676322512207031
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        4.0
+      ],
+      "edge_taxel": false,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 7,
+      "finger_name": "thumb",
+      "finger_channel_id": 7,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.004000000189989805,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.030542640107148883,
+        0.020763225312060114
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        8.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 8,
+      "finger_name": "thumb",
+      "finger_channel_id": 8,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.004000000189989805,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.035542639995390174,
+        0.012763224932080503
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 9,
+      "finger_name": "thumb",
+      "finger_channel_id": 9,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.035542639995390174,
+        0.01676322512207031
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        4.0
+      ],
+      "edge_taxel": false,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 10,
+      "finger_name": "thumb",
+      "finger_channel_id": 10,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.004000000189989805,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.035542639995390174,
+        0.020763225312060114
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        8.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 11,
+      "finger_name": "thumb",
+      "finger_channel_id": 11,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.004000000189989805,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.040542639883631465,
+        0.012763224932080503
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 12,
+      "finger_name": "thumb",
+      "finger_channel_id": 12,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.040542639883631465,
+        0.01676322512207031
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        4.0
+      ],
+      "edge_taxel": false,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 13,
+      "finger_name": "thumb",
+      "finger_channel_id": 13,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.004000000189989805,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.040542639883631465,
+        0.020763225312060114
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        8.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 14,
+      "finger_name": "thumb",
+      "finger_channel_id": 14,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.04554264023753404,
+        0.014763225027075406
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 15,
+      "finger_name": "thumb",
+      "finger_channel_id": 15,
+      "parent_link": "handle_l1_thumb_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.00915220791320801,
+        0.04554264023753404,
+        0.01876322521706521
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        6.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 16,
+      "finger_name": "index",
+      "finger_channel_id": 0,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0028313249664306643,
+        0.023681009622085095
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 17,
+      "finger_name": "index",
+      "finger_channel_id": 1,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.004831325061425567,
+        0.028681009975987673
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 18,
+      "finger_name": "index",
+      "finger_channel_id": 2,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008313248714357613,
+        0.028681009975987673
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 19,
+      "finger_name": "index",
+      "finger_channel_id": 3,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.004831325061425567,
+        0.033681009864228964
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 20,
+      "finger_name": "index",
+      "finger_channel_id": 4,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008313248714357613,
+        0.033681009864228964
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 21,
+      "finger_name": "index",
+      "finger_channel_id": 5,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.004831325061425567,
+        0.038681009752470255
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 22,
+      "finger_name": "index",
+      "finger_channel_id": 6,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008313248714357613,
+        0.038681009752470255
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 23,
+      "finger_name": "index",
+      "finger_channel_id": 7,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.004831325061425567,
+        0.043681009640711546
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 24,
+      "finger_name": "index",
+      "finger_channel_id": 8,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008313248714357613,
+        0.043681009640711546
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 25,
+      "finger_name": "index",
+      "finger_channel_id": 9,
+      "parent_link": "handle_l1_index_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0028313249664306643,
+        0.048681009994614124
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 26,
+      "finger_name": "middle",
+      "finger_channel_id": 0,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.0010705893707275399,
+        0.02376499237965346
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 27,
+      "finger_name": "middle",
+      "finger_channel_id": 1,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.003070589465722442,
+        0.02876499273355604
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 28,
+      "finger_name": "middle",
+      "finger_channel_id": 2,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        -0.0009294107242673632,
+        0.02876499273355604
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 29,
+      "finger_name": "middle",
+      "finger_channel_id": 3,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.003070589465722442,
+        0.03376499262179733
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 30,
+      "finger_name": "middle",
+      "finger_channel_id": 4,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        -0.0009294107242673632,
+        0.03376499262179733
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 31,
+      "finger_name": "middle",
+      "finger_channel_id": 5,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.003070589465722442,
+        0.03876499251003862
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 32,
+      "finger_name": "middle",
+      "finger_channel_id": 6,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        -0.0009294107242673632,
+        0.03876499251003862
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 33,
+      "finger_name": "middle",
+      "finger_channel_id": 7,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.003070589465722442,
+        0.04376499239827991
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 34,
+      "finger_name": "middle",
+      "finger_channel_id": 8,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        -0.0009294107242673632,
+        0.04376499239827991
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 35,
+      "finger_name": "middle",
+      "finger_channel_id": 9,
+      "parent_link": "handle_l1_middle_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116268228912354,
+        0.0010705893707275399,
+        0.04876499275218249
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 36,
+      "finger_name": "ring",
+      "finger_channel_id": 0,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0011267919006347636,
+        0.023760950666701794
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 37,
+      "finger_name": "ring",
+      "finger_channel_id": 1,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008732081943601385,
+        0.028760951020604372
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 38,
+      "finger_name": "ring",
+      "finger_channel_id": 2,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0031267919956296667,
+        0.028760951020604372
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 39,
+      "finger_name": "ring",
+      "finger_channel_id": 3,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008732081943601385,
+        0.03376095090884566
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 40,
+      "finger_name": "ring",
+      "finger_channel_id": 4,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0031267919956296667,
+        0.03376095090884566
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 41,
+      "finger_name": "ring",
+      "finger_channel_id": 5,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008732081943601385,
+        0.038760950797086954
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 42,
+      "finger_name": "ring",
+      "finger_channel_id": 6,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0031267919956296667,
+        0.038760950797086954
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 43,
+      "finger_name": "ring",
+      "finger_channel_id": 7,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        0.0008732081943601385,
+        0.043760950685328245
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 44,
+      "finger_name": "ring",
+      "finger_channel_id": 8,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0031267919956296667,
+        0.043760950685328245
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 45,
+      "finger_name": "ring",
+      "finger_channel_id": 9,
+      "parent_link": "handle_l1_ring_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0011267919006347636,
+        0.048760951039230824
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 46,
+      "finger_name": "little",
+      "finger_channel_id": 0,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        -0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.002861157714843756,
+        0.023682224006354807
+      ],
+      "heatmap_coordinate_mm": [
+        0.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 47,
+      "finger_name": "little",
+      "finger_channel_id": 1,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0008611576198488536,
+        0.028682224360257386
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 48,
+      "finger_name": "little",
+      "finger_channel_id": 2,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.004861157809838659,
+        0.028682224360257386
+      ],
+      "heatmap_coordinate_mm": [
+        5.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 49,
+      "finger_name": "little",
+      "finger_channel_id": 3,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0008611576198488536,
+        0.03368222424849868
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 50,
+      "finger_name": "little",
+      "finger_channel_id": 4,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        -0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.004861157809838659,
+        0.03368222424849868
+      ],
+      "heatmap_coordinate_mm": [
+        10.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 51,
+      "finger_name": "little",
+      "finger_channel_id": 5,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0008611576198488536,
+        0.03868222413673997
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 52,
+      "finger_name": "little",
+      "finger_channel_id": 6,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.0024999999441206455
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.004861157809838659,
+        0.03868222413673997
+      ],
+      "heatmap_coordinate_mm": [
+        15.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 53,
+      "finger_name": "little",
+      "finger_channel_id": 7,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.0008611576198488536,
+        0.04368222402498126
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        0.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 54,
+      "finger_name": "little",
+      "finger_channel_id": 8,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        0.0020000000949949026,
+        0.007499999832361937
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.004861157809838659,
+        0.04368222402498126
+      ],
+      "heatmap_coordinate_mm": [
+        20.0,
+        4.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    },
+    {
+      "global_channel_id": 55,
+      "finger_name": "little",
+      "finger_channel_id": 9,
+      "parent_link": "handle_l1_little_distal",
+      "position_tactile_local_m": [
+        0.0,
+        -4.336808689942018e-19,
+        0.012500000186264515
+      ],
+      "position_parent_local_m": [
+        0.007116264881896973,
+        -0.002861157714843756,
+        0.04868222437888384
+      ],
+      "heatmap_coordinate_mm": [
+        25.0,
+        2.0
+      ],
+      "edge_taxel": true,
+      "taxel_area_m2_assumed": 9.999999747378752e-06,
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_candidate_v1.yaml
+
+# Frozen after the corrected two-dimensional privileged-direction probe and
+# final fixed-regression rerun.  Geometry remains the accepted outward-elbow
+# workcell; the v4 name also freezes the 10 mm local search envelope used by
+# the CH5 two-dimensional collection.
+project:
+  generated_model: generated/adam_pro_custom_right_hand_elbow_out_safe_v4_pulse.xml

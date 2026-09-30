@@ -1,0 +1,11 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_expert_fast_contact_lowforce.yaml
+task:
+  pressure_target_force_n_per_finger: 4.0
+  pressure_force_ramp_n_per_policy_step: 0.40
+  pressure_force_unload_n_per_policy_step: 0.80
+  pressure_stable_iterations: 4
+  pressure_maximum_iterations: 180
+  pressure_contact_loss_recovery_descent_step_m: 0.00045
+  pressure_contact_loss_no_contact_descent_step_m: 0.00045
+  pressure_contact_loss_recovery_iterations: 48
+  pressure_contact_loss_seated_stable_iterations: 2

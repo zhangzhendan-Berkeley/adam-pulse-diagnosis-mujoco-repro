@@ -1,0 +1,558 @@
+project:
+  simulator: mujoco
+  mujoco_version: "3.2.0"
+  robot_model: adam_pro
+  pnd_mujoco_commit: "84873eb3c4afd584d468864ba41527a1c14fb688"
+  pnd_ros2_commit: "29d92afbf417b32afc26c9450f27d211abf1b259"
+  fixed_pelvis_task_environment: true
+  generated_model: generated/adam_pro_custom_right_hand_v1_pulse.xml
+
+robot:
+  official_scene: third_party/pnd_mujoco/pnd_robots/adam_pro/scene.xml
+  official_model: third_party/pnd_mujoco/pnd_robots/adam_pro/adam_pro.xml
+  controlled_chain:
+    - shoulderPitch_Right
+    - shoulderRoll_Right
+    - shoulderYaw_Right
+    - elbow_Right
+    - wristYaw_Right
+    - wristPitch_Right
+    - wristRoll_Right
+  structurally_fixed_joints:
+    # The pelvis is fixed in the diagnosis workcell. Leaving the leg joints
+    # torque-controlled while both feet rest on the floor over-constrains the
+    # standing chain and causes a slow foot-to-foot oscillation during long
+    # searches. Bake the neutral lower-body pose into this task model.
+    hipPitch_Left: 0.0
+    hipRoll_Left: 0.0
+    hipYaw_Left: 0.0
+    kneePitch_Left: 0.0
+    anklePitch_Left: 0.0
+    ankleRoll_Left: 0.0
+    hipPitch_Right: 0.0
+    hipRoll_Right: 0.0
+    hipYaw_Right: 0.0
+    kneePitch_Right: 0.0
+    anklePitch_Right: 0.0
+    ankleRoll_Right: 0.0
+    waistRoll: 0.0
+    waistPitch: 0.0
+    waistYaw: 0.0
+  left_arm_actuators:
+    - shoulderPitch_Left
+    - shoulderRoll_Left
+    - shoulderYaw_Left
+    - elbow_Left
+    - wristYaw_Left
+    - wristPitch_Left
+    - wristRoll_Left
+  diagnosis_arm_actuators:
+    - shoulderPitch_Right
+    - shoulderRoll_Right
+    - shoulderYaw_Right
+    - elbow_Right
+    - wristYaw_Right
+    - wristPitch_Right
+    - wristRoll_Right
+  official_pro_has_articulated_hand: false
+  custom_right_hand_articulated: true
+  official_pro_has_wrist_actuator: true
+  # A small outward left-shoulder abduction keeps the attached hand clear of
+  # the thigh while preserving an otherwise natural standing reset pose.
+  reset_pose_rad:
+    shoulderPitch_Right: 0.0
+    shoulderRoll_Right: -0.12
+    shoulderYaw_Right: 0.0
+    elbow_Right: -0.50
+    wristYaw_Right: 0.0
+    wristPitch_Right: 0.0
+    wristRoll_Right: 0.0
+    shoulderRoll_Left: 0.12
+    # Keep the unused right hand clear of the thigh while preserving a
+    # relaxed standing posture; a straight elbow lets the official thumb
+    # brush the thigh once actuator dynamics settle.
+    elbow_Left: -0.50
+  safe_waypoint_durations_s: [1.0, 1.0, 1.0, 1.0]
+  safe_waypoint_intermediate_settle_s: 0.2
+  # CH3 configuration-space path for the longer custom hand. The first two
+  # poses preserve the accepted table-clearance route. The final two rotate
+  # and lift the custom hand outside the patient envelope before moving over
+  # the wrist. Every interpolated edge is collision checked with the diagnosis
+  # hand formed; the same path is traversed in reverse after retreat.
+  safe_waypoint_poses_rad:
+    - shoulderPitch_Right: -0.26239472
+      shoulderRoll_Right: -0.32016780
+      shoulderYaw_Right: -0.39251653
+      elbow_Right: -0.66122420
+      wristYaw_Right: 0.47836288
+      wristPitch_Right: 0.24862081
+      wristRoll_Right: -0.08031685
+    - shoulderPitch_Right: -0.57492821
+      shoulderRoll_Right: -0.28788980
+      shoulderYaw_Right: -0.39600976
+      elbow_Right: -0.94202895
+      wristYaw_Right: 0.72903258
+      wristPitch_Right: 0.40193168
+      wristRoll_Right: -0.07941883
+    - shoulderPitch_Right: -0.43697535
+      shoulderRoll_Right: -0.11547571
+      shoulderYaw_Right: -0.19680424
+      elbow_Right: -1.25682953
+      wristYaw_Right: 1.06199192
+      wristPitch_Right: 0.29763101
+      wristRoll_Right: -0.07122891
+    - shoulderPitch_Right: -0.07285212
+      shoulderRoll_Right: 0.18180873
+      shoulderYaw_Right: 0.02349616
+      elbow_Right: -1.81782709
+      wristYaw_Right: 1.86620244
+      wristPitch_Right: 0.15814252
+      wristRoll_Right: 0.06788514
+  # Custom-hand pre-contact posture. The forearm is nearly horizontal, the
+  # elbow remains below the wrist, both pad normals point down and the finger
+  # longitudinal axis is orthogonal to the patient forearm. A measured 0.07
+  # rad roll about that longitudinal axis puts the middle pad 1.31 mm lower at
+  # pre-contact; this compensates the real patient collision-mesh curvature
+  # and produces dual contact without a 4.5 mm single-finger gap. Wrist motion
+  # during contact remains bounded relative to this settled reference by the
+  # unchanged 15 deg gate.
+  precontact_pose_rad:
+    shoulderPitch_Right: 0.24050887
+    shoulderRoll_Right: 0.34446925
+    shoulderYaw_Right: 0.24170069
+    elbow_Right: -1.88956552
+    wristYaw_Right: 1.88702237
+    wristPitch_Right: 0.07594617
+    wristRoll_Right: 0.10929687
+
+hand:
+  source: handle_l1_right_custom_v1_with_adam_pro_adapter_v2
+  diagnosis_side: right
+  parent_body: wristRollRight
+  asset_metadata: assets/robots/handle_l1_right_custom_v1/kinematics.json
+  command_contract: custom_handle_l1_6_active_with_5_mechanical_mimic
+  # CH1 robot-side transform. This is versioned separately from the official
+  # hand baseline and must be accepted from local and side renders before CH2.
+  mounting:
+    position_in_wrist_m: [0.0, 0.0, -0.150]
+    quaternion_wxyz: [0.0, 0.707106781, 0.707106781, 0.0]
+  actuator:
+    kp: 12.0
+    kv: 0.4
+  # Twelve official left-hand position actuators remain in the full model.
+  expected_total_hand_actuators: 18
+  active_joints:
+    - handle_l1_little_flex
+    - handle_l1_ring_flex
+    - handle_l1_middle_flex
+    - handle_l1_index_flex
+    - handle_l1_thumb_abduction
+    - handle_l1_thumb_flex
+  position_couplings:
+    - joint: handle_l1_little_distal_joint
+      source_joint: handle_l1_little_flex
+      multiplier: 1.0
+    - joint: handle_l1_ring_distal_joint
+      source_joint: handle_l1_ring_flex
+      multiplier: 1.0
+    - joint: handle_l1_middle_distal_joint
+      source_joint: handle_l1_middle_flex
+      multiplier: 1.08
+    - joint: handle_l1_index_distal_joint
+      source_joint: handle_l1_index_flex
+      multiplier: 1.08
+    - joint: handle_l1_thumb_distal_joint
+      source_joint: handle_l1_thumb_flex
+      multiplier: 1.35
+  # Reset is deliberately not the final diagnosis gesture. The expert closes
+  # the unused fingers under actuator control before moving the arm.
+  reset_pose_rad:
+    handle_l1_little_flex: 0.05
+    handle_l1_ring_flex: 0.05
+    handle_l1_middle_flex: 0.03
+    handle_l1_index_flex: 0.03
+    handle_l1_thumb_abduction: -0.10
+    handle_l1_thumb_flex: -0.10
+  diagnosis_transition_duration_s: 1.4
+  diagnosis_transition_settle_s: 0.3
+  diagnosis_pose_rad:
+    # Human-like palpation pose: ring and little fingers are tucked before
+    # the arm approaches the patient; only index and middle remain extended.
+    handle_l1_little_flex: 1.25
+    handle_l1_ring_flex: 1.25
+    handle_l1_middle_flex: 0.02
+    handle_l1_index_flex: 0.02
+    # Natural partial tuck: clear of both thigh and patient palm while the
+    # index/middle pads remain extended for diagnosis.
+    handle_l1_thumb_abduction: -0.35
+    handle_l1_thumb_flex: -0.35
+  channel_counts:
+    thumb: 16
+    index: 10
+    middle: 10
+    ring: 10
+    little: 10
+
+scene:
+  timestep_s: 0.002
+  patient_forearm:
+    # Centered on the robot sagittal plane. Right-hand and left-hand task
+    # layouts are related only by the world-y mirror y_right = -y_left.
+    from_m: [0.55, -0.19, 1.10]
+    to_m: [0.55, 0.19, 1.10]
+    radius_m: 0.045
+    # Local -X is the patient's wrist/hand direction. +90 deg places that
+    # wrist at world -Y, on the same end as pulse_center_m and the right-hand
+    # diagnosis workspace. The previous -90 deg orientation put the visible
+    # wrist at +Y while the expert palpated the opposite forearm end.
+    visual_yaw_deg: 90.0
+    visual_mesh: assets/patient/patient_forearm_hand_cc0.obj
+    collision_mesh: assets/patient/patient_forearm_collision_cc0.obj
+    # Actual top of both forearm meshes at local x=-0.12 m, y=0.
+    # Never place a separate pulse collision patch above this skin surface.
+    pulse_center_m: [0.55, -0.12, 1.1240427725]
+    skin_solref: [0.030, 1.0]
+    skin_solimp: [0.75, 0.93, 0.004, 0.5, 2.0]
+    solref: [0.012, 1.0]
+    solimp: [0.90, 0.95, 0.002, 0.5, 2.0]
+  wrist_support:
+    center_m: [0.55, 0.0, 1.051]
+    half_size_m: [0.085, 0.22, 0.011]
+  table:
+    # Keep the patient fixed while moving the robot-side table edge from
+    # x=0.10 m to x=0.35 m. This leaves visible clearance from the
+    # pelvis/waist envelope while the patient remains at the same coordinates.
+    center_m: [0.80, 0.0, 1.005]
+    half_size_m: [0.45, 0.40, 0.035]
+  camera:
+    name: head_rgbd
+    # Adam faces world +X. This position is forward of the open head shell;
+    # camera -Z looks along +X through the xyaxes configured in the builder.
+    position_in_torso_m: [0.16, 0.0, 0.52]
+    xyaxes:
+      [0.29296586, -0.95612290, 0.0,
+       0.72985288, 0.22363441, 0.64598949]
+    fovy_deg: 55.0
+    width: 640
+    height: 480
+
+sensors:
+  proximity_range_m: 0.03
+  tactile_layout: assets/robots/handle_l1_right_custom_v1/tactile_full_56.json
+  # Kept for the 2x10 compatibility model. Physical pad frames are fitted from
+  # the custom-hand distal CAD and stored in kinematics.json.
+  tactile_pad_half_size_m: [0.0040, 0.0030, 0.0130]
+  tactile_pad_solref: [0.002, 1.0]
+  tactile_pad_solimp: [0.95, 0.99, 0.001, 0.5, 2.0]
+  # Legacy official-hand fields are retained only so the shared official-scene
+  # builder can construct its temporary source model before subtree replacement.
+  tactile_site_center_y_m:
+    index: 0.0063
+    middle: 0.0090
+  proximity_surface_y_m:
+    index: 0.0053
+    middle: 0.0081
+  tactile_taxel_area_m2: 0.000010
+  tactile_raw_range: [0, 4095]
+  calibration: assets/calibration/handle_l1_10ch_empirical_10n.npz
+
+task:
+  # Covers the Cartesian route from the final collision-checked safe waypoint
+  # to pre-contact. The old inherited y=-0.35 lower bound clipped the first
+  # tick from y about -0.49 into a 138 mm discontinuity.
+  cartesian_workspace_min_m: [0.30, -0.55, 1.05]
+  cartesian_workspace_max_m: [0.72, 0.55, 1.55]
+  # Deployment path: derive pulse features from the public calibrated tactile
+  # pressure stream instead of reading the simulator's latent pulse component.
+  policy_tactile_bandpass_enabled: true
+  policy_tactile_filter_minimum_frequency_hz: 0.6
+  policy_tactile_filter_maximum_frequency_hz: 2.0
+  # Reject one/two-frame sensor transients before zero-phase band-pass filtering
+  # spreads them over the complete pulse-quality window. The Hampel-style mask
+  # requires both a local residual and a robust MAD outlier, so smooth pulse
+  # extrema are preserved.
+  # Kept as an experimental interface. Initial OOD A/B testing attenuated
+  # valid low-amplitude pulses, so the filter is disabled in the frozen path.
+  policy_tactile_despike_enabled: false
+  policy_tactile_despike_window_samples: 5
+  policy_tactile_despike_threshold_mad: 6.0
+  policy_tactile_despike_minimum_delta_kpa: 0.08
+  # Align robust peak-to-peak values from the deployable calibrated-pressure
+  # bandpass with the frozen dynamic-channel quality-threshold domain.
+  policy_tactile_bandpass_calibration_gain: 1.8
+  # Keep the redundant 7-DoF arm from changing wrist branch while descending.
+  # This is a motion envelope around the settled pre-contact wrist pose, not
+  # an absolute joint-zero constraint.
+  contact_wrist_stabilization_enabled: true
+  wrist_motion_limit_deg: 15.0
+  approach_wrist_hold_tolerance_rad: 0.002
+  precontact_settle_s: 1.2
+  # M4 keeps the proven joint-space transition. M5 enables this explicitly
+  # to collect deployment-compatible Cartesian fine-approach supervision.
+  m5_cartesian_fine_approach_enabled: false
+  # Shadow/teacher data follows the proven joint-space path at a speed whose
+  # Cartesian increments fit the unchanged 0.75 mm SafetySupervisor limit.
+  m5_joint_waypoint_shadow_enabled: false
+  m5_joint_waypoint_protected_enabled: false
+  m5_joint_waypoint_duration_s: 40.0
+  m5_fine_approach_entry_settle_s: 1.2
+  m5_fine_approach_entry_stability_check_s: 0.25
+  m5_fine_approach_entry_max_position_drift_m: 0.00010
+  m5_fine_approach_entry_max_rotation_drift_rad: 0.003
+  m5_fine_approach_entry_settle_attempts: 3
+  m5_fine_approach_translation_step_m: 0.00065
+  m5_fine_approach_rotation_step_rad: 0.010
+  m5_fine_approach_position_tolerance_m: 0.0005
+  m5_fine_approach_rotation_tolerance_rad: 0.008
+  m5_fine_approach_maximum_steps: 1200
+  m5_fine_approach_stable_steps: 8
+  # The safe joint-space transition bends around the patient's hand. Sample
+  # that verified curve as Cartesian reference anchors; a straight TCP line
+  # intersects the patient's middle-finger collision geometry.
+  m5_fine_approach_reference_count: 160
+  m5_fine_approach_reference_position_tolerance_m: 0.0000001
+  m5_fine_approach_reference_rotation_tolerance_rad: 0.000001
+  m5_fine_approach_reference_actual_position_tolerance_m: 0.0010
+  m5_fine_approach_reference_actual_rotation_tolerance_rad: 0.015
+  m5_fine_approach_maximum_tracking_position_error_m: 0.0015
+  m5_fine_approach_maximum_tracking_rotation_error_rad: 0.020
+  # Keep redundant-arm IK on a continuous local branch. This is part of the
+  # deployable deterministic execution layer and does not expose expert truth.
+  m5_fine_approach_ik_joint_step_rad: 0.009
+  m5_fine_approach_ik_wrist_step_rad: 0.004
+  m5_fine_approach_ik_damping: 0.025
+  m5_fine_approach_maximum_ik_position_error_m: 0.003
+  m5_fine_approach_ik_rotation_tolerance_rad: 0.015
+  m5_fine_approach_ik_rotation_weight: 0.08
+  # Keep the compliant contact gains. Wrist drift is prevented by the joint
+  # target envelope during pressure regulation; raising stiffness here caused
+  # an unsafe impact-force spike in the high action-scale regression case.
+  contact_wrist_stiffness: 12.0
+  contact_wrist_damping: 1.2
+  approach_joint_target_step_rad: 0.025
+  approach_wrist_target_step_rad: 0.003
+  dual_contact_joint_target_step_rad: 0.003
+  dual_contact_wrist_target_step_rad: 0.0005
+  # Prevent a zero-motion pressure command from switching the redundant arm
+  # to another IK branch while retaining compliant force regulation.
+  pressure_joint_target_step_rad: 0.003
+  pressure_wrist_target_step_rad: 0.0005
+  retreat_lift_steps: 45
+  retreat_lift_step_m: 0.0010
+  retreat_pressure_unload_steps: 25
+  retreat_soft_lift_steps: 8
+  retreat_soft_lift_step_m: 0.00025
+  # The official thumb sits just outside the patient forearm.  A short
+  # radial escape during the first lift prevents the thumb shell from
+  # sweeping into the skin as the probe unloads.
+  pulse_search_lift_escape_enabled: true
+  pulse_search_lift_escape_trigger_m: 0.080
+  pulse_search_lift_escape_step_m: 0.00035
+  pulse_search_lift_escape_steps: 8
+  # Unload vertically before adding radial thumb-clearance motion, preventing
+  # a still-loaded proximal phalanx from sweeping across the patient's skin.
+  pulse_search_lift_vertical_unload_steps: 4
+  retreat_via_precontact: false
+  # Migrated from configs/adam_standard.yaml. Pressure is a per-finger
+  # nominal intent: 6 N / (10 taxels * 10 mm^2) = 60 kPa.
+  fingerpad_approach_step_m: 0.00020
+  fingerpad_maximum_approach_steps: 360
+  pressure_target_force_n_per_finger: 5.0
+  pressure_minimum_force_n_per_finger: 2.0
+  pressure_maximum_force_n_per_finger: 8.0
+  pressure_gain_blend_steps: 20
+  pressure_stable_iterations: 12
+  # Covers a complete 6.2 N/finger force ramp plus bounded command-drop
+  # recovery and the stable-force confirmation window.
+  pressure_maximum_iterations: 220
+  # The real skin mesh has a nonuniform curvature across the two pads. A
+  # slower preload ramp prevents the first-contact finger from overshooting
+  # while the other finger is being seated.
+  pressure_force_ramp_n_per_policy_step: 0.08
+  pressure_force_unload_n_per_policy_step: 0.40
+  # The cylindrical skin normal contains a lateral component near the wrist.
+  # A real examiner stabilizes this with the arm/hand; feeding it directly
+  # through J^T instead makes the simulated fingertip slide sideways. Keep
+  # the commanded palpation preload vertical while contact mechanics still
+  # resolve the physical local normal force on each compliant fingertip.
+  pressure_force_lateral_scale: 0.0
+  # Higher contact stiffness removes multi-second pose creep. Scale the
+  # feed-forward preload accordingly so measured fingertip force remains in
+  # the unchanged 2--8 N safety window.
+  pressure_feedforward_scale: 0.85
+  # Continuous measured-force relief precedes the 7.5 N hard retreat. It
+  # reduces only task-space feed-forward torque; the requested force target
+  # and the 2--8 N acceptance contract remain unchanged.
+  pressure_force_guard_soft_n: 6.8
+  pressure_force_guard_gain: 2.0
+  pressure_wrist_stiffness: 30.0
+  pressure_wrist_damping: 3.0
+  pressure_arm_gain_scale: 1.35
+  # Cartesian XY impedance emulates the examiner stabilizing the hand while
+  # vertical feed-forward establishes pressure. It references the actual
+  # landing pose latched at first contact and never uses pulse truth.
+  # The far side of the 18 mm search envelope has a poorer arm Jacobian: the
+  # same vertical preload creates substantially more lateral TCP deflection.
+  # Keep the physical first-contact pose with a stronger but still bounded
+  # Cartesian correction instead of shrinking the valid search workspace.
+  pressure_xy_hold_stiffness_n_per_m: 1200.0
+  pressure_xy_hold_maximum_force_n: 12.0
+  # Preserve a physical gap between non-sensing proximal finger links and the
+  # patient skin. Only the distal tactile pads are allowed to make contact.
+  # The barrier scales measured-force feed-forward continuously and is never
+  # exposed to the learned policy.
+  pressure_forbidden_clearance_pairs:
+    - body: handle_l1_index_proximal
+      environment_geom: patient_forearm_skin
+    - body: handle_l1_middle_proximal
+      environment_geom: patient_forearm_skin
+  pressure_forbidden_clearance_query_m: 0.010
+  pressure_forbidden_clearance_soft_m: 0.002
+  pressure_forbidden_clearance_hard_m: 0.0002
+  pressure_clearance_force_scale_fall_alpha: 0.5
+  pressure_clearance_force_scale_rise_alpha: 0.05
+  pressure_balance_tilt_gain_rad_per_n: 0.0003
+  pressure_maximum_balance_tilt_step_rad: 0.0008
+  # Limit cumulative seating tilt so the curved fingertip can establish dual
+  # contact without rotating the middle proximal phalanx into the skin.
+  pressure_maximum_balance_tilt_rad: 0.080
+  # Keep the small bounded tilt needed by the two curved official fingertips,
+  # but delay force feed-forward until both pads touch. This keeps first-contact
+  # seating inside the rate-limited approach controller and removes its twitch.
+  dual_contact_balance_tilt_enabled: true
+  dual_contact_seating_preload_enabled: false
+  dual_contact_recovery_iterations: 60
+  dual_contact_recovery_descent_step_m: 0.00005
+  dual_contact_seating_force_n_per_finger: 2.0
+  pulse_search_lift_clearance_m: 0.004
+  pulse_search_release_gap_threshold_m: 0.002
+  pulse_search_maximum_lift_m: 0.010
+  # Once the lateral target leaves the local fingertip envelope, release the
+  # old wrist branch at high clearance and let the whole arm rebase before
+  # descending. The model/expert label remains the bounded next segment.
+  pulse_search_coarse_reapproach_enabled: true
+  pulse_search_local_envelope_m: 0.006
+  pulse_search_coarse_reapproach_clearance_m: 0.025
+  pulse_search_coarse_reapproach_maximum_lift_m: 0.040
+  # Whole-arm landings consistently settle about 5 mm toward the forearm
+  # start because the curved official pads rotate while seating.  Compensate
+  # only the collision-free aerial target; the supervised logical segment
+  # remains purely lateral and unchanged.
+  pulse_search_coarse_landing_axial_precompensation_m: 0.005
+  # The official right-hand pad seating arc overshoots coarse moves in the
+  # positive patient-lateral direction by a median ~2.45 mm.  Apply the
+  # measured one-sided aerial offset; the opposite direction has negligible
+  # median lateral error and remains uncompensated.
+  pulse_search_coarse_landing_lateral_precompensation_positive_m: 0.0025
+  pulse_search_coarse_landing_lateral_precompensation_negative_m: 0.0
+  pulse_search_coarse_post_contact_descent_steps: 12
+  pulse_search_coarse_first_contact_force_limit_n: 1.5
+  # High-clearance whole-arm re-approach can leave the second curved pad up
+  # to 4.5 mm above the compliant skin.  Allow only this recovery path a
+  # longer bounded seating stroke, with a force guard below the frozen 8 N
+  # episode limit.
+  pulse_search_coarse_dual_contact_recovery_iterations: 90
+  pulse_search_coarse_dual_contact_recovery_descent_step_m: 0.00015
+  pulse_search_coarse_dual_contact_recovery_force_limit_n: 7.5
+  pulse_search_coarse_dual_contact_minimum_tilt_imbalance_n: 2.0
+  pulse_search_dual_contact_recovery_force_limit_n: 7.5
+  pulse_search_dual_contact_minimum_tilt_imbalance_n: 2.0
+  pulse_search_dual_contact_recovery_iterations: 90
+  pulse_search_dual_contact_recovery_descent_step_m: 0.00015
+  pulse_search_lift_increment_m: 0.001
+  pulse_search_translation_tolerance_m: 0.0005
+  # Coarse whole-arm seating can miss its collision-free aerial target near
+  # the edge of the workspace. Correct only from measured command/landing
+  # error using another full lift-translate-descend cycle. The correction is
+  # execution-internal and never becomes a second supervision label.
+  pulse_search_landing_correction_enabled: true
+  # Nominal curved-pad seating has up to 3.5 mm mostly axial offset while its
+  # lateral segment remains correct. Reserve correction for larger misses or
+  # any actual radius violation.
+  pulse_search_landing_correction_tolerance_m: 0.004
+  pulse_search_executed_radius_tolerance_m: 0.0005
+  pulse_search_landing_correction_maximum_attempts: 2
+  pulse_search_landing_correction_gain: 1.0
+  pulse_search_landing_correction_maximum_m: 0.006
+  pulse_search_descent_step_m: 0.00050
+  # Curved skin plus the official Pro fingertip can require more IK ticks
+  # after a lateral search move; keep the same 0.5 mm descent increment but
+  # allow a bounded second half of the approach before declaring recovery
+  # failure.
+  pulse_search_maximum_descent_steps: 80
+  pulse_search_minimum_sampling_force_n: 0.18
+  pulse_search_target_sampling_force_n: 6.0
+  pulse_search_maximum_sampling_force_n: 8.0
+  pulse_search_sampling_warmup_steps: 60
+  # The three-finger pressure/contact transient lasts longer than the legacy
+  # two-finger 8-step stability latch.  Keep the probe still for at least
+  # 1.5 s before building the public tactile FFT/centroid window.
+  pulse_search_sampling_minimum_warmup_steps: 30
+  pulse_search_hold_steps: 90
+  # A borderline coherent pulse can fluctuate around the spectral-energy
+  # cutoff in a 4.5 s FFT window.  When contact, force, frequency and the
+  # low-amplitude coherent thresholds already pass, collect 1.5 s more and
+  # replay the unchanged quality gate.  This never accepts a sample by itself.
+  pulse_search_quality_confirmation_enabled: true
+  pulse_search_quality_confirmation_extra_steps: 30
+  pulse_search_quality_confirmation_band_margin: 0.05
+  signal_capture_steps: 120
+  pulse_search_strategy: directional_gradient
+  # Preserve both observable XY components of the weighted-taxel gradient.
+  # The official-hand baseline remains one-dimensional unless explicitly
+  # enabled in its own config.
+  pulse_search_two_dimensional_enabled: true
+  # A clear waveform at a single outer taxel is not sufficient for the custom
+  # fingertip. This gate uses only dynamic tactile amplitudes and known taxel
+  # coordinates; it never reads the simulated pulse center. Weak/edge samples
+  # retain their spatial gradient and trigger the existing bounded search.
+  pulse_tactile_coverage:
+    enabled: true
+    central_lateral_half_extent_mm: 2.5
+    central_longitudinal_half_extent_mm: 9.0
+    minimum_central_energy_ratio: 0.75
+    maximum_weighted_centroid_offset_mm: 8.0
+    # Finger amplitudes may differ substantially; only each finger's own
+    # spatial centering is required. These checks use the current tactile
+    # window and known taxel coordinates, never pulse-center truth.
+    minimum_per_finger_energy_fraction: 0.0
+    minimum_per_finger_central_energy_ratio: 0.55
+    # A common rigid-hand translation must leave every active fingertip in the
+    # central third of its own 25 mm taxel array. This check is independent of
+    # unequal per-finger amplitude and rejects a visibly edge-biased pad.
+    maximum_per_finger_weighted_centroid_offset_mm: 5.0
+    equal_finger_weight_for_spatial_guidance: true
+  pulse_signal_quality:
+    schema_version: pulse_signal_quality_v1
+    minimum_samples: 60
+    minimum_dual_contact_ratio: 0.95
+    minimum_any_finger_peak_to_peak_kpa: 0.30
+    minimum_aggregate_peak_to_peak_kpa: 0.18
+    # A lower-amplitude pulse can still be clinically usable when its energy
+    # is tightly concentrated in the physiological band.  This fallback also
+    # allows one finger to sit near the pulse center without requiring the
+    # other finger to have a matching amplitude.
+    minimum_coherent_any_finger_peak_to_peak_kpa: 0.18
+    minimum_coherent_aggregate_peak_to_peak_kpa: 0.10
+    minimum_coherent_band_energy_ratio: 0.80
+    minimum_frequency_hz: 0.8
+    maximum_frequency_hz: 1.5
+    minimum_band_energy_ratio: 0.25
+    minimum_force_n: 2.0
+    maximum_force_n: 8.0
+    minimum_force_safe_ratio: 0.95
+  pulse_search_quality_maximum_points: 8
+  pulse_search_quality_maximum_attempts: 18
+  pulse_search_quality_minimum_step_m: 0.00075
+  pulse_search_quality_maximum_step_m: 0.00400
+  pulse_search_model_minimum_segment_m: 0.00025
+  pulse_search_quality_radius_m: 0.018
+  pulse_search_directional_minimum_points: 3
+  pulse_search_directional_maximum_points: 6
+  pulse_search_directional_maximum_attempts: 14
+  pulse_search_directional_minimum_step_m: 0.00045
+  pulse_search_directional_maximum_step_m: 0.00150
+  pulse_search_directional_convergence_bias_m: 0.00025
+  pulse_search_quality_recovery_enabled: true
+  pulse_search_quality_recovery_step_scale: 0.75
+  pulse_search_quality_recovery_max_radius_m: 0.018

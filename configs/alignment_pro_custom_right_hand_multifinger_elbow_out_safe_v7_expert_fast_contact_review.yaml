@@ -1,0 +1,12 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_expert_fast10s.yaml
+
+# Contact-speed review only. The coarse descent uses a larger bounded step;
+# proximity/contact remains the switching signal and the final seating step
+# stays smaller. Existing force, collision, and 10 N limits are unchanged.
+task:
+  fingerpad_approach_step_m: 0.00120
+  fingerpad_near_contact_step_m: 0.00045
+  fingerpad_maximum_approach_steps: 120
+  dual_contact_seating_preload_enabled: true
+  dual_contact_recovery_descent_step_m: 0.00045
+  dual_contact_recovery_iterations: 40

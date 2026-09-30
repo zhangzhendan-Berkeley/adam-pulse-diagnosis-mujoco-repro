@@ -1,0 +1,293 @@
+{
+  "schema_version": "handle_l1_visual_mesh_indexing_v1",
+  "purpose": "visual_normals_only_collision_meshes_unchanged",
+  "kinematics": "kinematics.json",
+  "links": {
+    "handle_l1_base": {
+      "source_mesh_file": "meshes/handle_l1_base.obj",
+      "visual_mesh_file": "meshes/handle_l1_base_visual_smooth.obj",
+      "source_sha256": "b1ac52584858f1e69a42cacae58257c9114f4d171a4ab22ee80d3857ae20f539",
+      "visual_sha256": "cd530aa1d308c71b1fc7c261f17e0bf0837d3ce8ea576d6bac9f8b3fe28e5960",
+      "source_vertices": 440571,
+      "visual_vertices": 72198,
+      "faces": 146857,
+      "bounds_m": [
+        [
+          -0.02726103,
+          -0.04429118,
+          1.3e-06
+        ],
+        [
+          0.02480336,
+          0.04022607,
+          0.1098478
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_little_proximal": {
+      "source_mesh_file": "meshes/handle_l1_little_proximal.obj",
+      "visual_mesh_file": "meshes/handle_l1_little_proximal_visual_smooth.obj",
+      "source_sha256": "93596c8a4512ecb2856d9419725aabc394982ed249a8b2498a1895280b24d762",
+      "visual_sha256": "6e06f2e8a6c20a01e0cc8679cf3a684482b7b2448a3cfca003006749b81b49f2",
+      "source_vertices": 47013,
+      "visual_vertices": 7825,
+      "faces": 15671,
+      "bounds_m": [
+        [
+          -0.01007524,
+          -0.01153451,
+          -0.00741075
+        ],
+        [
+          0.00829285,
+          0.00728612,
+          0.04130764
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_little_distal": {
+      "source_mesh_file": "meshes/handle_l1_little_distal.obj",
+      "visual_mesh_file": "meshes/handle_l1_little_distal_visual_smooth.obj",
+      "source_sha256": "806092b38e8914fef694a757d625c05affe7b901829617d24ed6bba3f0b48421",
+      "visual_sha256": "9cf06ff5c23e8b12aeec5bdc6595aabe33cacc4666b6004bb0ff412872372876",
+      "source_vertices": 48309,
+      "visual_vertices": 8043,
+      "faces": 16103,
+      "bounds_m": [
+        [
+          -0.00881663,
+          -0.00958934,
+          -0.00579048
+        ],
+        [
+          0.00782,
+          0.00723415,
+          0.04868222
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_ring_proximal": {
+      "source_mesh_file": "meshes/handle_l1_ring_proximal.obj",
+      "visual_mesh_file": "meshes/handle_l1_ring_proximal_visual_smooth.obj",
+      "source_sha256": "b0b9437f9c20fed695c36830a6287af4bb04b0e0c975bffa7ba4ff6fd03b502f",
+      "visual_sha256": "7d6e4bee7d338c256afbefbc3e120f5729d5ff019a3fa35fa96be418a56d8e20",
+      "source_vertices": 47976,
+      "visual_vertices": 7978,
+      "faces": 15992,
+      "bounds_m": [
+        [
+          -0.01037406,
+          -0.00969685,
+          -0.0071446
+        ],
+        [
+          0.00835622,
+          0.00781163,
+          0.04594949
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_ring_distal": {
+      "source_mesh_file": "meshes/handle_l1_ring_distal.obj",
+      "visual_mesh_file": "meshes/handle_l1_ring_distal_visual_smooth.obj",
+      "source_sha256": "e35e7b92e0292c64407147b5609ef28475ea5ecec71b101d8d7cac8eaa3d4859",
+      "visual_sha256": "76cf342c03ee2ebb927b61167ea402df706030417cfe7759a8260b9074247fe1",
+      "source_vertices": 48390,
+      "visual_vertices": 8056,
+      "faces": 16130,
+      "bounds_m": [
+        [
+          -0.00881663,
+          -0.00798136,
+          -0.00559605
+        ],
+        [
+          0.00782,
+          0.00753389,
+          0.04876095
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_middle_proximal": {
+      "source_mesh_file": "meshes/handle_l1_middle_proximal.obj",
+      "visual_mesh_file": "meshes/handle_l1_middle_proximal_visual_smooth.obj",
+      "source_sha256": "34decea67634b6ddbdde7b21ac713163aea66ec1f811bfd10bfd5f8899e44a5f",
+      "visual_sha256": "b62557e75c42baa3526796b1709f5b0ddd4589eb4327d6c1ac3ba030c1718a04",
+      "source_vertices": 48300,
+      "visual_vertices": 8031,
+      "faces": 16100,
+      "bounds_m": [
+        [
+          -0.01051292,
+          -0.00840713,
+          -0.00712642
+        ],
+        [
+          0.00806702,
+          0.00906804,
+          0.05117584
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_middle_distal": {
+      "source_mesh_file": "meshes/handle_l1_middle_distal.obj",
+      "visual_mesh_file": "meshes/handle_l1_middle_distal_visual_smooth.obj",
+      "source_sha256": "2e859d3e5b3f5cf509d469e2e6d1a14cbbbf1d335d2001b64b6b2bbdfe0807c6",
+      "visual_sha256": "88f9882b463a901306ad6b32c9a2238be322bd922ea8a4d0b424fbfdf8081f28",
+      "source_vertices": 48342,
+      "visual_vertices": 8073,
+      "faces": 16114,
+      "bounds_m": [
+        [
+          -0.00881663,
+          -0.0076872,
+          -0.00560278
+        ],
+        [
+          0.00782,
+          0.00781613,
+          0.04876499
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_index_proximal": {
+      "source_mesh_file": "meshes/handle_l1_index_proximal.obj",
+      "visual_mesh_file": "meshes/handle_l1_index_proximal_visual_smooth.obj",
+      "source_sha256": "87dbc5cb7160d07745a151ae1edb47d5dd0591b47f6313490a8eea2d299aa195",
+      "visual_sha256": "7260335e8ece5d66445787241ac8dd3cd1a62593ad5572342c1e9bd70578434b",
+      "source_vertices": 48069,
+      "visual_vertices": 7993,
+      "faces": 16023,
+      "bounds_m": [
+        [
+          -0.01037406,
+          -0.0082141,
+          -0.00734575
+        ],
+        [
+          0.00835622,
+          0.01102128,
+          0.04626611
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_index_distal": {
+      "source_mesh_file": "meshes/handle_l1_index_distal.obj",
+      "visual_mesh_file": "meshes/handle_l1_index_distal_visual_smooth.obj",
+      "source_sha256": "ee0fc5ecea02b7ba1c7dd9598e767bec6473ab59d0a3a3a33e323508c39d8d6e",
+      "visual_sha256": "43dd05df7fd99f0163b1258f977a338eba2c3b12935dbd639f31555fb4b7c380",
+      "source_vertices": 48378,
+      "visual_vertices": 8078,
+      "faces": 16126,
+      "bounds_m": [
+        [
+          -0.00881663,
+          -0.00737197,
+          -0.00579682
+        ],
+        [
+          0.00782,
+          0.00953299,
+          0.04868101
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_thumb_mount": {
+      "source_mesh_file": "meshes/handle_l1_thumb_mount.obj",
+      "visual_mesh_file": "meshes/handle_l1_thumb_mount_visual_smooth.obj",
+      "source_sha256": "c0b2133801611f123b0aafb664a2231e1198276d6d0ab3e8977262241afb9ffd",
+      "visual_sha256": "a49bb7be6e49ae07a4de98e8ec9745d9eb2afd7c6b398530813590a31b0d009f",
+      "source_vertices": 33600,
+      "visual_vertices": 5576,
+      "faces": 11200,
+      "bounds_m": [
+        [
+          -0.01000002,
+          -0.00999995,
+          0.00334594
+        ],
+        [
+          0.00999997,
+          0.02244331,
+          0.02884594
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_thumb_proximal": {
+      "source_mesh_file": "meshes/handle_l1_thumb_proximal.obj",
+      "visual_mesh_file": "meshes/handle_l1_thumb_proximal_visual_smooth.obj",
+      "source_sha256": "f4b9302a7f5c73fb71ee799170d909adb51beb6b3c8fd36d44cace4b300a6de0",
+      "visual_sha256": "aa970bd8a6a555de48df15ebd0084d7f547485d07097dfe29c2a5e5ba2c9fe3d",
+      "source_vertices": 45669,
+      "visual_vertices": 7597,
+      "faces": 15223,
+      "bounds_m": [
+        [
+          -0.01057538,
+          -0.0079791,
+          -0.0080362
+        ],
+        [
+          0.01057146,
+          0.04747699,
+          0.01795291
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    },
+    "handle_l1_thumb_distal": {
+      "source_mesh_file": "meshes/handle_l1_thumb_distal.obj",
+      "visual_mesh_file": "meshes/handle_l1_thumb_distal_visual_smooth.obj",
+      "source_sha256": "714b0971af1c57ed555ab253b56b522a3a458289a67803ecce6a6503b98b2b7e",
+      "visual_sha256": "91e2375c63dcbdac3a9cfabf3a0094f07ca0675d0360132253c5c2c52a12d623",
+      "source_vertices": 42498,
+      "visual_vertices": 7078,
+      "faces": 14166,
+      "bounds_m": [
+        [
+          -0.00965971,
+          -0.00549889,
+          -0.00576857
+        ],
+        [
+          0.00963756,
+          0.04554264,
+          0.02288699
+        ]
+      ],
+      "geometry_change": "none_exact_coincident_vertex_indexing_only"
+    }
+  },
+  "adapter": {
+    "source_mesh_file": "meshes/adam_pro_adapter_v2_in_hand_root.obj",
+    "visual_mesh_file": "meshes/adam_pro_adapter_v2_in_hand_root_visual_smooth.obj",
+    "source_sha256": "cc1c5fd26af292f5c5476852677221c4f7e8d6c879663253cfbcfb0827017bd1",
+    "visual_sha256": "b9f503c8915b64f3a616186ed4c237a5961034cb34f2455b17a7a9a1e94b578f",
+    "source_vertices": 32280,
+    "visual_vertices": 5360,
+    "faces": 10760,
+    "bounds_m": [
+      [
+        -0.02549252,
+        -0.02865471,
+        -0.062
+      ],
+      [
+        0.02718842,
+        0.027875,
+        0.0
+      ]
+    ],
+    "geometry_change": "none_exact_coincident_vertex_indexing_only"
+  }
+}

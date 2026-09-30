@@ -1,0 +1,23 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_fast_pressure.yaml
+
+# Expert-only speed audit. Safety force/collision gates remain unchanged.
+robot:
+  safe_waypoint_durations_s: [1.2, 1.2, 1.2, 1.2]
+  safe_waypoint_intermediate_settle_s: 0.10
+task:
+  # Keep directional caps within the runtime's validated 1.5 mm envelope.
+  pulse_search_positive_axial_maximum_step_m: 0.0015
+  pulse_search_positive_lateral_maximum_step_m: 0.0015
+  joint_path_collision_preview_maximum_samples: 768
+  precontact_settle_s: 0.25
+  fingerpad_approach_step_m: 0.00035
+  fingerpad_near_contact_step_m: 0.00035
+  fingerpad_maximum_approach_steps: 300
+  dual_contact_recovery_iterations: 40
+  dual_contact_recovery_descent_step_m: 0.00030
+  pulse_search_coarse_dual_contact_recovery_iterations: 40
+  pulse_search_coarse_dual_contact_recovery_descent_step_m: 0.00030
+  pulse_search_dual_contact_recovery_iterations: 40
+  pulse_search_dual_contact_recovery_descent_step_m: 0.00030
+  pressure_stable_iterations: 6
+  pressure_maximum_iterations: 100

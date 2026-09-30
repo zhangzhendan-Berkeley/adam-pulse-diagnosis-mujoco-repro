@@ -1,0 +1,8 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v5.yaml
+
+# A/B candidate for the asymmetric -14 mm lateral failure.  The frozen CH5
+# segment checkpoint remains unchanged and its raw 4 mm proposal is retained
+# in audit records; the embodiment safety layer radially caps execution to
+# 3 mm before the existing three-stage lift/move/descend controller.
+task:
+  pulse_search_quality_maximum_step_m: 0.003

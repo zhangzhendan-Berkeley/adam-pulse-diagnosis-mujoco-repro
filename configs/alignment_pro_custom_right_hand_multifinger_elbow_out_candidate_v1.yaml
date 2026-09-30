@@ -1,0 +1,89 @@
+extends: alignment_pro_custom_right_hand_multifinger_safe_v2.yaml
+
+project:
+  generated_model: generated/adam_pro_custom_right_hand_elbow_out_candidate_v1_pulse.xml
+
+robot:
+  # The patient workcell is translated 70 mm toward the diagnosis side. This
+  # preserves the full relative hand/patient geometry while allowing the arm
+  # to approach with the elbow outside the right shoulder.
+  precontact_pose_rad:
+    shoulderPitch_Right: 0.16434533
+    shoulderRoll_Right: -0.08770394
+    shoulderYaw_Right: 0.32292622
+    elbow_Right: -1.91812752
+    wristYaw_Right: 1.51368659
+    wristPitch_Right: 0.32653982
+    wristRoll_Right: 0.11516067
+  # Collision-checked joint-space route for the translated patient workcell.
+  # The three internal knots were found with the diagnosis hand already
+  # formed and every interpolated edge was rechecked at <= 0.015 rad spacing.
+  safe_waypoint_durations_s: [1.0, 1.0, 1.0, 1.0]
+  safe_waypoint_poses_rad:
+    - shoulderPitch_Right: -0.18306757
+      shoulderRoll_Right: -0.62333676
+      shoulderYaw_Right: -0.44105603
+      elbow_Right: -0.88003672
+      wristYaw_Right: 0.54190987
+      wristPitch_Right: 0.14322720
+      wristRoll_Right: -0.01359185
+    - shoulderPitch_Right: -0.18967041
+      shoulderRoll_Right: -0.52212069
+      shoulderYaw_Right: -0.28748476
+      elbow_Right: -1.21372380
+      wristYaw_Right: 0.87373731
+      wristPitch_Right: 0.14608004
+      wristRoll_Right: 0.01177149
+    - shoulderPitch_Right: -0.19627324
+      shoulderRoll_Right: -0.42090463
+      shoulderYaw_Right: -0.13391349
+      elbow_Right: -1.54741088
+      wristYaw_Right: 1.20556475
+      wristPitch_Right: 0.14893288
+      wristRoll_Right: 0.03713483
+    # Same diagnostic orientation, but with the probe 45 mm above the
+    # pre-contact target.  This clearance knot makes the approach/retreat
+    # symmetric and prevents the relaxed little finger sweeping the palm.
+    - shoulderPitch_Right: 0.12105559
+      shoulderRoll_Right: -0.12986396
+      shoulderYaw_Right: 0.33832354
+      elbow_Right: -2.05641448
+      wristYaw_Right: 1.53485613
+      wristPitch_Right: 0.37947255
+      wristRoll_Right: 0.28785557
+
+scene:
+  patient_forearm:
+    from_m: [0.55, -0.26, 1.10]
+    to_m: [0.55, 0.12, 1.10]
+    # Fourteen millimetres toward the forearm center remains inside the radial
+    # wrist palpation region and leaves enough palm-transition clearance for
+    # the full -8 mm axial noise/recovery case.
+    pulse_center_m: [0.55, -0.176, 1.1240427725]
+  wrist_support:
+    center_m: [0.55, -0.07, 1.051]
+
+task:
+  # The Cartesian retreat has already raised the fingertips clear of skin.
+  # Returning down to the exact pre-contact pose before traversing the reverse
+  # joint path needlessly sweeps the little finger past the visible palm.
+  retreat_via_precontact: false
+  # Preserve the accepted palm/pad orientation while Cartesian search moves
+  # the outward-elbow branch.  Position-only IK can otherwise consume the
+  # redundant wrist DOFs and sweep the ring pad into the wrist transition.
+  contact_task_rotation_hold_enabled: false
+  pulse_search_task_rotation_hold_enabled: false
+  # Recenter to the accepted initial palm orientation only after contact has
+  # been released and before translation.  Disable the hold again before
+  # descent so compliant multi-finger seating remains available.
+  pulse_search_free_space_rotation_recenter_enabled: false
+  pulse_search_free_space_rotation_recenter_steps: 8
+  pulse_search_free_space_rotation_tolerance_rad: 0.012
+  # The outward-elbow branch has less ring-finger clearance toward +u (world
+  # -X).  A 3 mm first segment preserves the 4 mm step in every other direction
+  # while avoiding the wrist-transition envelope.
+  pulse_search_positive_lateral_maximum_step_m: 0.003
+  # The translated workcell provides verified wrist-transition clearance for
+  # three local 3 mm segments.  Keep the high-clearance whole-arm branch for
+  # larger excursions, where its landing precompensation is still needed.
+  pulse_search_local_envelope_m: 0.010

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adam-pulse-diagnosis-mujoco"
+version = "0.1.0"
+description = "MuJoCo 3.2 Adam Pro pulse-diagnosis simulation and learning stack"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "mujoco==3.2.0",
+  "numpy>=1.24",
+  "opencv-python-headless>=4.8",
+  "PyYAML>=6.0",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+repro = [
+  "torch==2.10.0",
+  "pytest>=9.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,62 @@
+extends: alignment_pro_custom_right_hand_v1.yaml
+
+hand:
+  version: custom_right_hand_multifinger_v1
+  diagnosis_pose_rad:
+    # Natural three-finger palpation. CAD-frame checks put the straight ring
+    # pad only 0.6 mm below the middle pad with a common downward normal.
+    # Minimum collision-free tuck found by closed-loop approach checks. At
+    # 1.00 rad the pad touches patient_wrist_support; 1.10 rad clears it and
+    # looks less folded than the former 1.25 rad pose.
+    handle_l1_little_flex: 1.10
+    handle_l1_ring_flex: 0.02
+    handle_l1_middle_flex: 0.02
+    handle_l1_index_flex: 0.02
+    # Keep the thumb lightly opposed with little distal coupling. The former
+    # -0.35 rad flex produced a visibly twisted distal segment.
+    handle_l1_thumb_abduction: -0.15
+    handle_l1_thumb_flex: -0.12
+
+task:
+  diagnostic_fingers: [index, middle, ring]
+  allowed_patient_contact_fingers: [index, middle, ring]
+  # The frozen dual-finger pose brackets the pulse with index/middle. Shift
+  # one half finger pitch so middle is central and index/ring are symmetric.
+  diagnostic_precontact_axial_offset_m: 0.012
+  # Seat parallel pads slowly, then use a bounded palm-plane micro tilt to
+  # distribute load between the outer diagnostic fingers.
+  dual_contact_balance_tilt_enabled: true
+  contact_multifinger_balance_tilt_enabled: false
+  search_multifinger_balance_tilt_enabled: true
+  pressure_multifinger_balance_tilt_enabled: true
+  pressure_multifinger_balance_deadband_n: 0.35
+  pressure_multifinger_balance_lock_spread_n: 1.0
+  dual_contact_recovery_iterations: 120
+  # The third pad is an additional sensing surface rather than a requirement
+  # to equalize all three forces. A sustained 1.25 N preload is sufficient for
+  # the calibrated pulse gate; the unchanged 8 N ceiling remains per finger.
+  pressure_minimum_force_n_per_finger: 1.25
+  pressure_target_force_n_per_finger: 4.0
+  pulse_signal_quality:
+    minimum_force_n: 1.25
+  pulse_tactile_coverage:
+    # Different preload and finger gain may produce unequal amplitudes. The
+    # spatial gate below evaluates each finger's own centroid instead.
+    minimum_per_finger_energy_fraction: 0.0
+  # Nominal three-finger dynamic-energy fractions from the frozen CH5 expert
+  # demo (seed 20260810). The relative index/ring imbalance supplies the
+  # patient-axis component that within-pad centering intentionally removes.
+  pulse_search_interfinger_energy_guidance:
+    # Unequal finger amplitudes are valid and must not create a search move.
+    # Spatial guidance now comes only from each pad's normalized taxel
+    # centroid, so weak middle/ring signals retain equal directional weight.
+    enabled: false
+    reference_energy_fraction: [0.27495171, 0.49546924, 0.22957905]
+    gain: 1.0
+  pressure_forbidden_clearance_pairs:
+    - body: handle_l1_index_proximal
+      environment_geom: patient_forearm_skin
+    - body: handle_l1_middle_proximal
+      environment_geom: patient_forearm_skin
+    - body: handle_l1_ring_proximal
+      environment_geom: patient_forearm_skin

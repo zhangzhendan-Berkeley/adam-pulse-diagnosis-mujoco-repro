@@ -1,0 +1,19 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v7_expert_fast_contact_review.yaml
+
+# Robust speed candidate: stop building force at a 4 N/finger diagnostic
+# preload.  The previous 6 N target reached 7--8 N on the first tick after
+# regulation and then lost all three contacts during the search settle.
+task:
+  pressure_target_force_n_per_finger: 4.0
+  pressure_force_ramp_n_per_policy_step: 0.40
+  pressure_force_unload_n_per_policy_step: 0.80
+  pressure_stable_iterations: 4
+  pressure_maximum_iterations: 120
+  pressure_multifinger_balance_tilt_enabled: false
+  pressure_contact_loss_recovery_descent_step_m: 0.00008
+  pressure_contact_loss_recovery_iterations: 24
+  pressure_contact_loss_seated_stable_iterations: 1
+  pressure_contact_loss_rotation_hold_enabled: true
+  dual_contact_balance_tilt_enabled: false
+  dual_contact_recovery_descent_step_m: 0.00015
+  dual_contact_recovery_iterations: 24

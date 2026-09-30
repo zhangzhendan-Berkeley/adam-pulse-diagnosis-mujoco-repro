@@ -1,0 +1,24 @@
+extends: alignment_pro_custom_right_hand_multifinger_elbow_out_safe_v4.yaml
+
+# CH5 deployment candidate after the no-proximity and observable/privileged
+# expert A/B.  Ordinary centering labels remain fully tactile-observable.  The
+# oracle is permitted only when one finger dominates the dynamic energy and
+# makes the spatial direction demonstrably unreliable; truth is never added
+# to the policy observation.
+project:
+  generated_model: generated/adam_pro_custom_right_hand_elbow_out_safe_v5_pulse.xml
+
+task:
+  pulse_search_privileged_fallback_rejection_reasons:
+    - tactile_per_finger_energy
+
+  # The physical sensor calibration covers 0--10 N.  Preserve the 4 N target
+  # and the existing 6.8 N soft force relief, while allowing bounded recovery
+  # up to a 9 N operational ceiling.  Ten newtons remains the hardware range,
+  # not a commanded palpation target.
+  pressure_maximum_force_n_per_finger: 9.0
+  pulse_search_coarse_dual_contact_recovery_force_limit_n: 9.0
+  pulse_search_dual_contact_recovery_force_limit_n: 9.0
+  pulse_search_maximum_sampling_force_n: 9.0
+  pulse_signal_quality:
+    maximum_force_n: 9.0

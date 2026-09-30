@@ -1,0 +1,797 @@
+{
+  "schema_version": "handle_l1_right_custom_v1_kinematics",
+  "source_match": "solid_semantic_match.json",
+  "source_step_sha256": "b2f638e4807d96d1ff36e795b5d3ac24d27018cb0377791561a09e133b69c57b",
+  "handedness": "right",
+  "hand_flange_origin_cad_mm": [
+    1.7576750073,
+    -40.3592517773,
+    -179.2692724609
+  ],
+  "adapter_to_hand_rotation": [
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  ],
+  "adapter_to_hand_translation_mm": [
+    2.6056310073,
+    -40.7491067773,
+    -193.7692724609
+  ],
+  "adapter_mesh_file": "meshes/adam_pro_adapter_v2_in_hand_root.obj",
+  "adapter_mesh_sha256": "cc1c5fd26af292f5c5476852677221c4f7e8d6c879663253cfbcfb0827017bd1",
+  "adapter_mass_kg_provisional": 0.04,
+  "adapter_alignment": {
+    "adapter_holes_mm": [
+      [
+        -18.860145,
+        -14.5,
+        -4.302044
+      ],
+      [
+        -18.860145,
+        -14.5,
+        5.997956
+      ],
+      [
+        19.639855,
+        -14.5,
+        -4.302044
+      ],
+      [
+        19.639855,
+        -14.5,
+        5.997956
+      ]
+    ],
+    "transformed_hand_holes_mm": [
+      [
+        6.9076750073,
+        -59.6092517773,
+        -179.2692724609
+      ],
+      [
+        -3.3923249927000003,
+        -59.6092517773,
+        -179.2692724609
+      ],
+      [
+        6.9076750073,
+        -21.1092517773,
+        -179.2692724609
+      ],
+      [
+        -3.3923249927000003,
+        -21.1092517773,
+        -179.2692724609
+      ]
+    ],
+    "maximum_hole_alignment_error_mm": 4.440892098500626e-16
+  },
+  "links": {
+    "handle_l1_base": {
+      "origin_cad_mm": [
+        1.7576750073,
+        -40.3592517773,
+        -179.2692724609
+      ],
+      "mass_kg": 0.43,
+      "box_diagonal_inertia_kg_m2": [
+        0.0006883375499101633,
+        0.0005295075688997482,
+        0.0003530968805411723
+      ],
+      "mesh_file": "meshes/handle_l1_base.obj",
+      "mesh_sha256": "b1ac52584858f1e69a42cacae58257c9114f4d171a4ab22ee80d3857ae20f539",
+      "mesh_vertices": 440571,
+      "mesh_faces": 146857,
+      "mesh_extents_m": [
+        0.052064392089843745,
+        0.08451724977791308,
+        0.10984650421142578
+      ]
+    },
+    "handle_l1_little_proximal": {
+      "origin_cad_mm": [
+        -0.5923,
+        -72.0105,
+        -84.898
+      ],
+      "mass_kg": 0.02,
+      "box_diagonal_inertia_kg_m2": [
+        4.546163284952758e-06,
+        4.518114733369566e-06,
+        1.1526712380095527e-06
+      ],
+      "mesh_file": "meshes/handle_l1_little_proximal.obj",
+      "mesh_sha256": "93596c8a4512ecb2856d9419725aabc394982ed249a8b2498a1895280b24d762",
+      "mesh_vertices": 47013,
+      "mesh_faces": 15671,
+      "mesh_extents_m": [
+        0.01836809206008911,
+        0.01882062530517578,
+        0.0487183952331543
+      ]
+    },
+    "handle_l1_little_distal": {
+      "origin_cad_mm": [
+        -1.5923,
+        -75.2755,
+        -48.04
+      ],
+      "mass_kg": 0.012,
+      "box_diagonal_inertia_kg_m2": [
+        3.2503050491971275e-06,
+        3.244052705599393e-06,
+        5.598070408674834e-07
+      ],
+      "mesh_file": "meshes/handle_l1_little_distal.obj",
+      "mesh_sha256": "806092b38e8914fef694a757d625c05affe7b901829617d24ed6bba3f0b48421",
+      "mesh_vertices": 48309,
+      "mesh_faces": 16103,
+      "mesh_extents_m": [
+        0.01663662672042847,
+        0.016823486328125,
+        0.054472702860832216
+      ],
+      "tactile_frame": {
+        "position_in_parent_m": [
+          0.007116264881896973,
+          -0.0028611577148437563,
+          0.03618222419261932
+        ],
+        "rotation_parent_from_tactile": [
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "outward_normal_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        "longitudinal_axis_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "channel_count": 10,
+        "sensitive_length_m": 0.025,
+        "taxel_area_m2_assumed": 1e-05,
+        "fit_basis": "distal-most 25 mm CAD pulp band",
+        "finger_name": "little"
+      }
+    },
+    "handle_l1_ring_proximal": {
+      "origin_cad_mm": [
+        -0.5923,
+        -52.2265,
+        -81.8675
+      ],
+      "mass_kg": 0.02,
+      "box_diagonal_inertia_kg_m2": [
+        5.2092153585365065e-06,
+        5.283009306272512e-06,
+        1.0956168625105846e-06
+      ],
+      "mesh_file": "meshes/handle_l1_ring_proximal.obj",
+      "mesh_sha256": "b0b9437f9c20fed695c36830a6287af4bb04b0e0c975bffa7ba4ff6fd03b502f",
+      "mesh_vertices": 47976,
+      "mesh_faces": 15992,
+      "mesh_extents_m": [
+        0.018730276107788088,
+        0.017508480072021486,
+        0.05309408950805664
+      ]
+    },
+    "handle_l1_ring_distal": {
+      "origin_cad_mm": [
+        -1.5923,
+        -53.7935,
+        -39.8941
+      ],
+      "mass_kg": 0.012,
+      "box_diagonal_inertia_kg_m2": [
+        3.195406787345878e-06,
+        3.2314613541770613e-06,
+        5.175001304385662e-07
+      ],
+      "mesh_file": "meshes/handle_l1_ring_distal.obj",
+      "mesh_sha256": "e35e7b92e0292c64407147b5609ef28475ea5ecec71b101d8d7cac8eaa3d4859",
+      "mesh_vertices": 48390,
+      "mesh_faces": 16130,
+      "mesh_extents_m": [
+        0.01663662672042847,
+        0.015515243530273438,
+        0.05435700511932373
+      ],
+      "tactile_frame": {
+        "position_in_parent_m": [
+          0.007116264881896973,
+          -0.001126791900634764,
+          0.03626095085296631
+        ],
+        "rotation_parent_from_tactile": [
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "outward_normal_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        "longitudinal_axis_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "channel_count": 10,
+        "sensitive_length_m": 0.025,
+        "taxel_area_m2_assumed": 1e-05,
+        "fit_basis": "distal-most 25 mm CAD pulp band",
+        "finger_name": "ring"
+      }
+    },
+    "handle_l1_middle_proximal": {
+      "origin_cad_mm": [
+        -0.5923,
+        -32.579,
+        -80.882
+      ],
+      "mass_kg": 0.02,
+      "box_diagonal_inertia_kg_m2": [
+        6.174225268339802e-06,
+        6.240612967379808e-06,
+        1.0843267143386227e-06
+      ],
+      "mesh_file": "meshes/handle_l1_middle_proximal.obj",
+      "mesh_sha256": "34decea67634b6ddbdde7b21ac713163aea66ec1f811bfd10bfd5f8899e44a5f",
+      "mesh_vertices": 48300,
+      "mesh_faces": 16100,
+      "mesh_extents_m": [
+        0.018579944133758547,
+        0.017475173950195315,
+        0.05830225944519043
+      ]
+    },
+    "handle_l1_middle_distal": {
+      "origin_cad_mm": [
+        -1.8444,
+        -31.57,
+        -33.7473
+      ],
+      "mass_kg": 0.012,
+      "box_diagonal_inertia_kg_m2": [
+        3.1962081435706385e-06,
+        3.2326323189694084e-06,
+        5.171305536028266e-07
+      ],
+      "mesh_file": "meshes/handle_l1_middle_distal.obj",
+      "mesh_sha256": "2e859d3e5b3f5cf509d469e2e6d1a14cbbbf1d335d2001b64b6b2bbdfe0807c6",
+      "mesh_vertices": 48342,
+      "mesh_faces": 16114,
+      "mesh_extents_m": [
+        0.016636627197265625,
+        0.015503328323364257,
+        0.054367774963378905
+      ],
+      "tactile_frame": {
+        "position_in_parent_m": [
+          0.007116268228912354,
+          0.0010705893707275394,
+          0.036264992565917975
+        ],
+        "rotation_parent_from_tactile": [
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "outward_normal_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        "longitudinal_axis_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "channel_count": 10,
+        "sensitive_length_m": 0.025,
+        "taxel_area_m2_assumed": 1e-05,
+        "fit_basis": "distal-most 25 mm CAD pulp band",
+        "finger_name": "middle"
+      }
+    },
+    "handle_l1_index_proximal": {
+      "origin_cad_mm": [
+        -0.5923,
+        -12.4495,
+        -81.963
+      ],
+      "mass_kg": 0.02,
+      "box_diagonal_inertia_kg_m2": [
+        5.407052343530152e-06,
+        5.375091682936527e-06,
+        1.2013714708402163e-06
+      ],
+      "mesh_file": "meshes/handle_l1_index_proximal.obj",
+      "mesh_sha256": "87dbc5cb7160d07745a151ae1edb47d5dd0591b47f6313490a8eea2d299aa195",
+      "mesh_vertices": 48069,
+      "mesh_faces": 16023,
+      "mesh_extents_m": [
+        0.018730276107788088,
+        0.01923537468910217,
+        0.05361186218261719
+      ]
+    },
+    "handle_l1_index_distal": {
+      "origin_cad_mm": [
+        -1.5923,
+        -9.6205,
+        -40.0558
+      ],
+      "mass_kg": 0.012,
+      "box_diagonal_inertia_kg_m2": [
+        3.2536121015019045e-06,
+        3.2446116145865384e-06,
+        5.625551841851151e-07
+      ],
+      "mesh_file": "meshes/handle_l1_index_distal.obj",
+      "mesh_sha256": "ee0fc5ecea02b7ba1c7dd9598e767bec6473ab59d0a3a3a33e323508c39d8d6e",
+      "mesh_vertices": 48378,
+      "mesh_faces": 16126,
+      "mesh_extents_m": [
+        0.01663662672042847,
+        0.016904964819550516,
+        0.054477832794189454
+      ],
+      "tactile_frame": {
+        "position_in_parent_m": [
+          0.007116264881896973,
+          0.002831324966430664,
+          0.03618100980834961
+        ],
+        "rotation_parent_from_tactile": [
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "outward_normal_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        "longitudinal_axis_in_parent": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "channel_count": 10,
+        "sensitive_length_m": 0.025,
+        "taxel_area_m2_assumed": 1e-05,
+        "fit_basis": "distal-most 25 mm CAD pulp band",
+        "finger_name": "index"
+      }
+    },
+    "handle_l1_thumb_mount": {
+      "origin_cad_mm": [
+        16.4077,
+        -20.7491,
+        -156.7198
+      ],
+      "mass_kg": 0.018,
+      "box_diagonal_inertia_kg_m2": [
+        2.554222543561654e-06,
+        1.5753743877411764e-06,
+        2.178848098600019e-06
+      ],
+      "mesh_file": "meshes/handle_l1_thumb_mount.obj",
+      "mesh_sha256": "c0b2133801611f123b0aafb664a2231e1198276d6d0ab3e8977262241afb9ffd",
+      "mesh_vertices": 33600,
+      "mesh_faces": 11200,
+      "mesh_extents_m": [
+        0.019999999523162844,
+        0.03244326460361481,
+        0.02549999237060547
+      ]
+    },
+    "handle_l1_thumb_proximal": {
+      "origin_cad_mm": [
+        16.4077,
+        -10.2491,
+        -142.4239
+      ],
+      "mass_kg": 0.02,
+      "box_diagonal_inertia_kg_m2": [
+        6.251353038069114e-06,
+        1.8710375956741826e-06,
+        5.870945332490567e-06
+      ],
+      "mesh_file": "meshes/handle_l1_thumb_proximal.obj",
+      "mesh_sha256": "f4b9302a7f5c73fb71ee799170d909adb51beb6b3c8fd36d44cace4b300a6de0",
+      "mesh_vertices": 45669,
+      "mesh_faces": 15223,
+      "mesh_extents_m": [
+        0.02114684295654297,
+        0.055456092834472656,
+        0.025989105224609378
+      ]
+    },
+    "handle_l1_thumb_distal": {
+      "origin_cad_mm": [
+        16.4077,
+        30.2081,
+        -131.1506
+      ],
+      "mass_kg": 0.014,
+      "box_diagonal_inertia_kg_m2": [
+        3.997441896781898e-06,
+        1.3924467723729211e-06,
+        3.4738922764404163e-06
+      ],
+      "mesh_file": "meshes/handle_l1_thumb_distal.obj",
+      "mesh_sha256": "714b0971af1c57ed555ab253b56b522a3a458289a67803ecce6a6503b98b2b7e",
+      "mesh_vertices": 42498,
+      "mesh_faces": 14166,
+      "mesh_extents_m": [
+        0.019297266483306888,
+        0.0510415267944336,
+        0.02865556335449219
+      ],
+      "tactile_frame": {
+        "position_in_parent_m": [
+          0.00915220791320801,
+          0.03304264005126953,
+          0.01676322512207031
+        ],
+        "rotation_parent_from_tactile": [
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "outward_normal_in_parent": [
+          1.0,
+          -0.0,
+          -0.0
+        ],
+        "longitudinal_axis_in_parent": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "channel_count": 16,
+        "sensitive_length_m": 0.025,
+        "taxel_area_m2_assumed": 1e-05,
+        "fit_basis": "distal-most 25 mm CAD pulp band",
+        "finger_name": "thumb"
+      }
+    }
+  },
+  "joints": [
+    {
+      "name": "handle_l1_little_flex",
+      "parent": "handle_l1_base",
+      "child": "handle_l1_little_proximal",
+      "axis": [
+        0.0,
+        0.9969173391662902,
+        0.0784590266929423
+      ],
+      "range_rad": [
+        0.0,
+        1.570796
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        -0.0023499750073000003,
+        -0.03165124822269999,
+        0.0943712724609
+      ]
+    },
+    {
+      "name": "handle_l1_little_distal_joint",
+      "parent": "handle_l1_little_proximal",
+      "child": "handle_l1_little_distal",
+      "axis": [
+        0.0,
+        0.9969173391662902,
+        0.0784590266929423
+      ],
+      "range_rad": [
+        0.0,
+        1.75
+      ],
+      "mimic": [
+        "handle_l1_little_flex",
+        1.0,
+        0.0
+      ],
+      "origin_in_parent_m": [
+        -0.001,
+        -0.0032650000000000005,
+        0.036857999999999995
+      ]
+    },
+    {
+      "name": "handle_l1_ring_flex",
+      "parent": "handle_l1_base",
+      "child": "handle_l1_ring_proximal",
+      "axis": [
+        0.0,
+        0.9996573234001926,
+        0.026177008468551553
+      ],
+      "range_rad": [
+        0.0,
+        1.570796
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        -0.0023499750073000003,
+        -0.0118672482227,
+        0.0974017724609
+      ]
+    },
+    {
+      "name": "handle_l1_ring_distal_joint",
+      "parent": "handle_l1_ring_proximal",
+      "child": "handle_l1_ring_distal",
+      "axis": [
+        0.0,
+        0.9996573234001926,
+        0.026177008468551553
+      ],
+      "range_rad": [
+        0.0,
+        1.75
+      ],
+      "mimic": [
+        "handle_l1_ring_flex",
+        1.0,
+        0.0
+      ],
+      "origin_in_parent_m": [
+        -0.001,
+        -0.0015670000000000003,
+        0.04197340000000001
+      ]
+    },
+    {
+      "name": "handle_l1_middle_flex",
+      "parent": "handle_l1_base",
+      "child": "handle_l1_middle_proximal",
+      "axis": [
+        0.0,
+        0.9996573234001926,
+        -0.026177008468551553
+      ],
+      "range_rad": [
+        0.0,
+        1.570796
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        -0.0023499750073000003,
+        0.007780251777300002,
+        0.0983872724609
+      ]
+    },
+    {
+      "name": "handle_l1_middle_distal_joint",
+      "parent": "handle_l1_middle_proximal",
+      "child": "handle_l1_middle_distal",
+      "axis": [
+        0.0,
+        0.9996573234001926,
+        -0.026177008468551553
+      ],
+      "range_rad": [
+        0.0,
+        1.75
+      ],
+      "mimic": [
+        "handle_l1_middle_flex",
+        1.08,
+        0.0
+      ],
+      "origin_in_parent_m": [
+        -0.0012521,
+        0.0010090000000000003,
+        0.0471347
+      ]
+    },
+    {
+      "name": "handle_l1_index_flex",
+      "parent": "handle_l1_base",
+      "child": "handle_l1_index_proximal",
+      "axis": [
+        0.0,
+        0.9969173391662902,
+        -0.0784590266929423
+      ],
+      "range_rad": [
+        0.0,
+        1.570796
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        -0.0023499750073000003,
+        0.027909751777300002,
+        0.09730627246090001
+      ]
+    },
+    {
+      "name": "handle_l1_index_distal_joint",
+      "parent": "handle_l1_index_proximal",
+      "child": "handle_l1_index_distal",
+      "axis": [
+        0.0,
+        0.9969173391662902,
+        -0.0784590266929423
+      ],
+      "range_rad": [
+        0.0,
+        1.75
+      ],
+      "mimic": [
+        "handle_l1_index_flex",
+        1.08,
+        0.0
+      ],
+      "origin_in_parent_m": [
+        -0.001,
+        0.002829000000000001,
+        0.0419072
+      ]
+    },
+    {
+      "name": "handle_l1_thumb_abduction",
+      "parent": "handle_l1_base",
+      "child": "handle_l1_thumb_mount",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "range_rad": [
+        -2.094,
+        0.0
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        0.0146500249927,
+        0.019610151777300005,
+        0.022549472460900007
+      ]
+    },
+    {
+      "name": "handle_l1_thumb_flex",
+      "parent": "handle_l1_thumb_mount",
+      "child": "handle_l1_thumb_proximal",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "range_rad": [
+        -0.8,
+        0.0
+      ],
+      "active": true,
+      "origin_in_parent_m": [
+        0.0,
+        0.010499999999999999,
+        0.01429589999999999
+      ]
+    },
+    {
+      "name": "handle_l1_thumb_distal_joint",
+      "parent": "handle_l1_thumb_proximal",
+      "child": "handle_l1_thumb_distal",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "range_rad": [
+        -1.1,
+        0.0
+      ],
+      "mimic": [
+        "handle_l1_thumb_flex",
+        1.35,
+        0.0
+      ],
+      "origin_in_parent_m": [
+        0.0,
+        0.0404572,
+        0.011273300000000007
+      ]
+    }
+  ],
+  "active_joint_count": 6,
+  "mimic_joint_count": 5,
+  "total_hand_mass_kg_provisional": 0.61,
+  "provisional_parameters": [
+    "joint axes and origins inferred from coaxial CAD cylindrical faces",
+    "joint ranges and mimic ratios require hardware/manual confirmation",
+    "hand link masses retain the historical documented 0.610 kg allocation",
+    "link inertias use bounding-box estimates pending measured mass properties",
+    "adapter mass is a 0.040 kg polymer estimate pending an actual weighed part",
+    "robot-side adapter-to-wrist transform remains to be aligned in CH1"
+  ]
+}

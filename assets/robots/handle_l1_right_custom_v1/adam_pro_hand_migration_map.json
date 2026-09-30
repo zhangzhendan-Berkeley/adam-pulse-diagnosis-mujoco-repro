@@ -1,0 +1,69 @@
+{
+  "schema_version": "adam_pro_official_to_handle_l1_right_custom_v1",
+  "external_action_contract": "PulseAction_7d_unchanged",
+  "parent_body": "wristRollRight",
+  "fixed_mount_body": "custom_right_hand_mount",
+  "official_left_hand": "unchanged_12_position_actuators",
+  "right_hand_actuator_count": {
+    "official": 12,
+    "custom": 6
+  },
+  "joint_mapping": [
+    {
+      "finger": "little",
+      "official_active": ["R_pinky_MCP_joint", "R_pinky_DIP_joint"],
+      "custom_active": "handle_l1_little_flex",
+      "custom_mimic": "handle_l1_little_distal_joint",
+      "mimic_ratio": 1.0
+    },
+    {
+      "finger": "ring",
+      "official_active": ["R_ring_MCP_joint", "R_ring_DIP_joint"],
+      "custom_active": "handle_l1_ring_flex",
+      "custom_mimic": "handle_l1_ring_distal_joint",
+      "mimic_ratio": 1.0
+    },
+    {
+      "finger": "middle",
+      "official_active": ["R_middle_MCP_joint", "R_middle_DIP_joint"],
+      "custom_active": "handle_l1_middle_flex",
+      "custom_mimic": "handle_l1_middle_distal_joint",
+      "mimic_ratio": 1.08
+    },
+    {
+      "finger": "index",
+      "official_active": ["R_index_MCP_joint", "R_index_DIP_joint"],
+      "custom_active": "handle_l1_index_flex",
+      "custom_mimic": "handle_l1_index_distal_joint",
+      "mimic_ratio": 1.08
+    },
+    {
+      "finger": "thumb",
+      "official_active": [
+        "R_thumb_MCP_joint1",
+        "R_thumb_MCP_joint2",
+        "R_thumb_PIP_joint",
+        "R_thumb_DIP_joint"
+      ],
+      "custom_active": [
+        "handle_l1_thumb_abduction",
+        "handle_l1_thumb_flex"
+      ],
+      "custom_mimic": "handle_l1_thumb_distal_joint",
+      "mimic_ratio": 1.35
+    }
+  ],
+  "downstream_impact": {
+    "observation": "CH2 adds tactile_full_56 and preserves tactile_diagnostic_2x10",
+    "ik": "arm remains 7d; probe frame and precontact pose require refit",
+    "expert": "contact, pressure, uv search and centering gates require refit",
+    "policy": "old embodiment checkpoint is baseline-only and must be retrained",
+    "ros2": "joint map and full tactile channel metadata require a new asset version"
+  },
+  "parameter_sources": {
+    "geometry_and_joint_axes": "kinematics.json",
+    "mount_transform_and_pose": "configs/alignment_pro_custom_right_hand_v1.yaml",
+    "official_mass_inertia_and_limits": "third_party/pnd_mujoco/pnd_robots/adam_pro/adam_pro.xml",
+    "custom_mass_inertia_and_limits": "kinematics.json"
+  }
+}

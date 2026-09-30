@@ -1,0 +1,18 @@
+from enum import IntEnum
+
+
+class TaskPhase(IntEnum):
+    RESET = 0
+    OBSERVE = 1
+    COARSE_APPROACH = 2
+    FINE_APPROACH = 3
+    PRE_CONTACT = 4
+    CONTACT_ESTABLISHMENT = 5
+    PRESSURE_REGULATION = 6
+    PULSE_SEARCH = 7
+    RECENTER = 8
+    STABLE_HOLD = 9
+    SIGNAL_CAPTURE = 10
+    RETREAT = 11
+    SUCCESS = 12
+    FAILURE = 13
